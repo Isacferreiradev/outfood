@@ -307,8 +307,21 @@
   .border-destaque { border-color: #FFB627 !important; }
   .border-sucesso  { border-color: #00C853 !important; }
 
+  /* Mobile optimizations */
   @media (max-width: 767px) {
-    .hero-headline { font-size: 40px !important; line-height: 1.05; }
+    .hero-headline { font-size: 38px !important; line-height: 1.1; }
+    .offer-card { padding: 32px 20px 30px !important; }
+    .price-circle svg.circle-svg { inset: -12px -6px -10px -6px; width: calc(100% + 12px); height: calc(100% + 22px); }
+  }
+
+  @media (max-width: 380px) {
+    .hero-headline { font-size: 32px !important; }
+    .price-circle span { font-size: 52px !important; }
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
   }
 </style>
 </head>
