@@ -308,20 +308,24 @@
   .border-sucesso  { border-color: #00C853 !important; }
 
   /* Mobile optimizations */
+  /* Mobile optimizations */
   @media (max-width: 767px) {
-    .hero-headline { font-size: 38px !important; line-height: 1.1; }
-    .offer-card { padding: 32px 20px 30px !important; }
-    .price-circle svg.circle-svg { inset: -12px -6px -10px -6px; width: calc(100% + 12px); height: calc(100% + 22px); }
+    .hero-headline { font-size: 34px !important; line-height: 1.05; letter-spacing: -0.02em; }
+    .offer-card { padding: 32px 24px !important; }
+    .price-circle svg.circle-svg { inset: -14px -8px -12px -8px; width: calc(100% + 16px); height: calc(100% + 26px); }
+    section { padding-left: 20px !important; padding-right: 20px !important; }
   }
 
   @media (max-width: 380px) {
-    .hero-headline { font-size: 32px !important; }
-    .price-circle span { font-size: 52px !important; }
+    .hero-headline { font-size: 30px !important; }
+    .price-circle span { font-size: 48px !important; }
+    .offer-card { padding: 28px 16px !important; }
   }
 
   body {
     overflow-x: hidden;
     width: 100%;
+    text-rendering: optimizeLegibility;
   }
 </style>
 </head>
@@ -371,54 +375,54 @@
       recupera o contato dos clientes que você nem sabia que tinha.
     </p>
 
-    <!-- Checklists Amarelos (No topo) -->
-    <div class="grid grid-cols-3 gap-2 md:gap-10 mb-8 md:mb-12 max-w-4xl mx-auto">
-      <div class="flex flex-col items-center text-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <!-- Checklists Amarelos (UX Melhorada) -->
+    <div class="flex flex-wrap justify-center gap-x-4 gap-y-3 md:gap-x-12 mb-10 md:mb-14 max-w-4xl mx-auto px-2">
+      <div class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polyline points="20 6 9 17 4 12"/>
         </svg>
-        <span class="text-textoclaro text-[10px] md:text-base font-semibold leading-tight">+1.847 hamburguerias aplicando</span>
+        <span class="text-textoclaro text-xs md:text-base font-bold whitespace-nowrap">+1.847 hamburguerias</span>
       </div>
-      <div class="flex flex-col items-center text-center gap-2 border-x border-borda px-1">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <div class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polyline points="20 6 9 17 4 12"/>
         </svg>
-        <span class="text-textoclaro text-[10px] md:text-base font-semibold leading-tight">Resultado em até 30 dias</span>
+        <span class="text-textoclaro text-xs md:text-base font-bold whitespace-nowrap">Resultado 30 dias</span>
       </div>
-      <div class="flex flex-col items-center text-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <div class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polyline points="20 6 9 17 4 12"/>
         </svg>
-        <span class="text-textoclaro text-[10px] md:text-base font-semibold leading-tight">Garantia de até 30 dias</span>
+        <span class="text-textoclaro text-xs md:text-base font-bold whitespace-nowrap">Garantia 30 dias</span>
       </div>
     </div>
 
     <!-- CTA gigante -->
-    <a href="#oferta-section" aria-label="Quero sair do iFood por 9 reais e 90 centavos"
-       class="cta-primary inline-block bg-primaria text-white font-anton uppercase tracking-wide text-xl sm:text-2xl md:text-3xl px-6 sm:px-10 md:px-14 py-4 sm:py-5 md:py-6 rounded-xl shadow-lg leading-tight">
-      Quero sair do iFood por R$ 9,90
-    </a>
+    <div class="mb-10">
+      <a href="#oferta-section" aria-label="Quero sair do iFood por 9 reais e 90 centavos"
+         class="cta-primary inline-block w-full sm:w-auto bg-primaria text-white font-anton uppercase tracking-wide text-xl sm:text-2xl md:text-3xl px-8 md:px-14 py-5 md:py-6 rounded-xl shadow-lg leading-tight">
+        Quero sair do iFood por R$ 9,90
+      </a>
+    </div>
 
-    <!-- Selos de Segurança (Abaixo do botão e lado a lado) -->
-    <div class="flex flex-row items-center justify-center gap-3 md:gap-6 mt-8 md:mt-10 text-textosec text-[10px] md:text-sm font-medium">
-      <span class="flex items-center gap-1.5 whitespace-nowrap">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <!-- Selos de Segurança (UX Melhorada: Ícones + Texto Legível) -->
+    <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-textosec text-[11px] md:text-sm font-medium opacity-80">
+      <span class="flex items-center gap-1.5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
           <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
         </svg>
         Compra 100% segura
       </span>
-      <span class="hidden md:inline text-borda">|</span>
-      <span class="flex items-center gap-1.5 whitespace-nowrap">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <span class="flex items-center gap-1.5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="2" y="5" width="20" height="14" rx="2"/>
           <line x1="2" y1="10" x2="22" y2="10"/>
         </svg>
-        Pix, cartão ou boleto
+        Pix, Cartão ou Boleto
       </span>
-      <span class="hidden md:inline text-borda">|</span>
-      <span class="flex items-center gap-1.5 whitespace-nowrap">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <span class="flex items-center gap-1.5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
         </svg>
         Acesso em 2 minutos
@@ -556,9 +560,9 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
       <!-- CARD 1 -->
-      <div class="card-hover bg-base rounded-2xl p-8 border-t-4 border-primaria">
+      <div class="card-hover bg-base rounded-2xl p-6 md:p-8 border-t-4 border-primaria">
         <div class="mb-6">
-          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <svg width="48" height="48" md:width="56" md:height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
             <circle cx="32" cy="32" r="28" fill="#FF3B1F" opacity="0.12"/>
             <circle cx="32" cy="32" r="20" fill="#FF3B1F" opacity="0.25"/>
             <path d="M22 32a10 10 0 0 1 18-6" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" fill="none"/>
@@ -576,9 +580,9 @@
       </div>
 
       <!-- CARD 2 -->
-      <div class="card-hover bg-base rounded-2xl p-8 border-t-4 border-destaque">
+      <div class="card-hover bg-base rounded-2xl p-6 md:p-8 border-t-4 border-destaque">
         <div class="mb-6">
-          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <svg width="48" height="48" md:width="56" md:height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
             <circle cx="32" cy="32" r="28" fill="#FFB627" opacity="0.12"/>
             <circle cx="32" cy="32" r="20" fill="#FFB627" opacity="0.25"/>
             <path d="M18 38l10-10 7 7 11-11" stroke="#FFB627" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -593,9 +597,9 @@
       </div>
 
       <!-- CARD 3 -->
-      <div class="card-hover bg-base rounded-2xl p-8 border-t-4 border-sucesso">
+      <div class="card-hover bg-base rounded-2xl p-6 md:p-8 border-t-4 border-sucesso">
         <div class="mb-6">
-          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <svg width="48" height="48" md:width="56" md:height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
             <circle cx="32" cy="32" r="28" fill="#00C853" opacity="0.12"/>
             <circle cx="32" cy="32" r="20" fill="#00C853" opacity="0.25"/>
             <path d="M22 30l4 4 12-12" stroke="#00C853" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -623,7 +627,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- MÓDULO 1 -->
-      <div class="card-hover bg-card rounded-2xl p-7 border border-borda">
+      <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
         <div class="flex items-start gap-5">
           <div class="flex-shrink-0">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -640,7 +644,7 @@
       </div>
 
       <!-- MÓDULO 2 -->
-      <div class="card-hover bg-card rounded-2xl p-7 border border-borda">
+      <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
         <div class="flex items-start gap-5">
           <div class="flex-shrink-0">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -656,7 +660,7 @@
       </div>
 
       <!-- MÓDULO 3 -->
-      <div class="card-hover bg-card rounded-2xl p-7 border border-borda">
+      <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
         <div class="flex items-start gap-5">
           <div class="flex-shrink-0">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -672,7 +676,7 @@
       </div>
 
       <!-- MÓDULO 4 -->
-      <div class="card-hover bg-card rounded-2xl p-7 border border-borda">
+      <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
         <div class="flex items-start gap-5">
           <div class="flex-shrink-0">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -688,7 +692,7 @@
       </div>
 
       <!-- MÓDULO 5 -->
-      <div class="card-hover bg-card rounded-2xl p-7 border border-borda">
+      <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
         <div class="flex items-start gap-5">
           <div class="flex-shrink-0">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -704,7 +708,7 @@
       </div>
 
       <!-- MÓDULO 6 -->
-      <div class="card-hover bg-card rounded-2xl p-7 border border-borda">
+      <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
         <div class="flex items-start gap-5">
           <div class="flex-shrink-0">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1090,9 +1094,9 @@
 <!-- 8. GARANTIA TRIPLA                             -->
 <!-- ============================================= -->
 <section class="bg-card px-4 md:px-8 py-12 md:py-20">
-  <div class="max-w-3xl mx-auto dashed-guarantee rounded-2xl p-8 md:p-12 text-center bg-base">
+  <div class="max-w-3xl mx-auto dashed-guarantee rounded-2xl p-6 md:p-12 text-center bg-base">
     <div class="flex justify-center mb-5">
-      <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <svg width="48" height="48" md:width="56" md:height="56" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
         <polyline points="9 12 11 14 15 10"/>
       </svg>
@@ -1326,11 +1330,11 @@
       trabalhando pra ele ou pra você mesmo?
     </p>
 
-    <div class="flex flex-col md:flex-row gap-4 justify-center items-stretch max-w-3xl mx-auto">
-      <a href="#" class="cta-primary flex-1 bg-primaria text-white text-center font-bold uppercase tracking-wide text-base md:text-lg py-5 px-6 rounded-xl">
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-stretch max-w-3xl mx-auto px-2">
+      <a href="#" class="cta-primary flex-1 bg-primaria text-white text-center font-bold uppercase tracking-wide text-base md:text-lg py-5 px-6 rounded-xl shadow-lg">
         Quero o Essencial — R$ 9,90
       </a>
-      <a href="#" class="cta-success flex-1 bg-sucesso text-white text-center font-bold uppercase tracking-wide text-base md:text-lg py-5 px-6 rounded-xl">
+      <a href="#" class="cta-success flex-1 bg-sucesso text-white text-center font-bold uppercase tracking-wide text-base md:text-lg py-5 px-6 rounded-xl shadow-lg">
         Quero o PRO — R$ 19,90
       </a>
     </div>
