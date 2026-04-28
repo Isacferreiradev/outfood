@@ -1,1383 +1,1760 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OutFood — Método 3R para Hamburguerias saírem do iFood</title>
-<meta name="description" content="Método 3R OutFood: o passo a passo definitivo para sua hamburgueria reduzir dependência do iFood, montar canal próprio em 1 tarde e recuperar o contato dos clientes em 30 dias.">
-<meta property="og:title" content="OutFood — Método 3R para Hamburguerias">
-<meta property="og:description" content="Saia do iFood (ou reduza pra 30%) em 30 dias sem perder um único cliente.">
-<meta property="og:image" content="og-image-placeholder.jpg">
-<meta property="og:type" content="website">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OutFood — Método 3R para Hamburguerias saírem do iFood</title>
+  <meta name="description"
+    content="Método 3R OutFood: o passo a passo definitivo para sua hamburgueria reduzir dependência do iFood, montar canal próprio em 1 tarde e recuperar o contato dos clientes em 30 dias.">
+  <meta property="og:title" content="OutFood — Método 3R para Hamburguerias">
+  <meta property="og:description" content="Saia do iFood (ou reduza pra 30%) em 30 dias sem perder um único cliente.">
+  <meta property="og:image" content="og-image-placeholder.jpg">
+  <meta property="og:type" content="website">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet">
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          primaria: '#FF3B1F',
-          destaque: '#FFB627',
-          base: '#0D0D0D',
-          card: '#1A1A1A',
-          textoclaro: '#F5F5F5',
-          textosec: '#A0A0A0',
-          sucesso: '#00C853',
-          borda: '#2A2A2A'
-        },
-        fontFamily: {
-          anton: ['Anton', 'sans-serif'],
-          inter: ['Inter', 'sans-serif']
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primaria: '#FF3B1F',
+            destaque: '#FFB627',
+            base: '#0D0D0D',
+            card: '#1A1A1A',
+            textoclaro: '#F5F5F5',
+            textosec: '#A0A0A0',
+            sucesso: '#00C853',
+            borda: '#2A2A2A'
+          },
+          fontFamily: {
+            anton: ['Anton', 'sans-serif'],
+            inter: ['Inter', 'sans-serif']
+          }
         }
       }
     }
-  }
-</script>
+  </script>
 
-<style>
-  :root {
-    --cor-primaria: #FF3B1F;
-    --cor-destaque: #FFB627;
-    --bg-base: #0D0D0D;
-    --bg-card: #1A1A1A;
-    --texto-principal: #F5F5F5;
-    --texto-secundario: #A0A0A0;
-    --cor-sucesso: #00C853;
-    --cor-borda: #2A2A2A;
-  }
+  <style>
+    :root {
+      --cor-primaria: #FF3B1F;
+      --cor-destaque: #FFB627;
+      --bg-base: #0D0D0D;
+      --bg-card: #1A1A1A;
+      --texto-principal: #F5F5F5;
+      --texto-secundario: #A0A0A0;
+      --cor-sucesso: #00C853;
+      --cor-borda: #2A2A2A;
+    }
 
-  html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* Compensa a barra sticky superior ao scrollar até a seção de ofertas */
-  #oferta-section { scroll-margin-top: 72px; }
-  @media (min-width: 768px) { #oferta-section { scroll-margin-top: 80px; } }
+    /* Compensa a barra sticky superior ao scrollar até a seção de ofertas */
+    #oferta-section {
+      scroll-margin-top: 72px;
+    }
 
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg-base);
-    color: var(--texto-principal);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+    @media (min-width: 768px) {
+      #oferta-section {
+        scroll-margin-top: 80px;
+      }
+    }
 
-  .font-anton { letter-spacing: -0.01em; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-base);
+      color: var(--texto-principal);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-  .cta-primary {
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  }
-  .cta-primary:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 30px -8px rgba(255, 59, 31, 0.55);
-  }
+    .font-anton {
+      letter-spacing: -0.01em;
+    }
 
-  .cta-success {
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  }
-  .cta-success:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 30px -8px rgba(0, 200, 83, 0.55);
-  }
+    .cta-primary {
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
 
-  .card-hover {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .card-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.7);
-  }
+    .cta-primary:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px -8px rgba(255, 59, 31, 0.55);
+    }
 
-  .pro-card {
-    box-shadow: 0 0 0 2px #00C853, 0 20px 60px -20px rgba(0, 200, 83, 0.35);
-  }
+    .cta-success {
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
 
-  .pro-badge {
-    box-shadow: 0 8px 22px rgba(0, 200, 83, 0.35);
-  }
+    .cta-success:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px -8px rgba(0, 200, 83, 0.55);
+    }
 
-  /* Hand-drawn underline animation feel */
-  .hand-underline {
-    position: relative;
-    display: inline-block;
-    color: #FF3B1F;
-  }
-  .hand-underline svg {
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 100%;
-    height: 14px;
-  }
+    .card-hover {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
 
-  /* Hand-drawn circle around price */
-  .price-circle {
-    position: relative;
-    display: inline-block;
-  }
-  .price-circle svg.circle-svg {
-    position: absolute;
-    inset: -18px -10px -14px -10px;
-    width: calc(100% + 20px);
-    height: calc(100% + 32px);
-    pointer-events: none;
-  }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.7);
+    }
 
-  /* === OFFER CARDS — estilo inspirado na referência === */
-  .offer-card {
-    position: relative;
-    background: #0F0F0F;
-    border-radius: 20px;
-    padding: 40px 32px 36px;
-    border: 1px solid #1F1F1F;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .offer-card:hover { transform: translateY(-4px); }
+    .pro-card {
+      box-shadow: 0 0 0 2px #00C853, 0 20px 60px -20px rgba(0, 200, 83, 0.35);
+    }
 
-  /* Glow externo laranja (card Essencial) */
-  .offer-card.essencial {
-    box-shadow:
-      0 0 0 1px #1F1F1F,
-      0 0 60px -10px rgba(255, 107, 43, 0.35),
-      0 25px 50px -25px rgba(255, 59, 31, 0.5);
-  }
-  .offer-card.essencial:hover {
-    box-shadow:
-      0 0 0 1px #2A2A2A,
-      0 0 90px -10px rgba(255, 107, 43, 0.5),
-      0 30px 60px -25px rgba(255, 59, 31, 0.65);
-  }
+    .pro-badge {
+      box-shadow: 0 8px 22px rgba(0, 200, 83, 0.35);
+    }
 
-  /* Glow externo verde (card PRO) */
-  .offer-card.pro {
-    border: 2px solid #00C853;
-    box-shadow:
-      0 0 60px -10px rgba(0, 200, 83, 0.35),
-      0 25px 50px -25px rgba(0, 200, 83, 0.5);
-  }
-  .offer-card.pro:hover {
-    box-shadow:
-      0 0 90px -10px rgba(0, 200, 83, 0.5),
-      0 30px 60px -25px rgba(0, 200, 83, 0.65);
-  }
+    /* Hand-drawn underline animation feel */
+    .hand-underline {
+      position: relative;
+      display: inline-block;
+      color: #FF3B1F;
+    }
 
-  /* Badge MAIS VENDIDO — banner com ponta inferior */
-  .ribbon-wrap {
-    position: absolute;
-    top: -1px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% + 20px);
-    pointer-events: none;
-  }
-  .ribbon-wrap svg { display: block; width: 100%; height: auto; }
-  .ribbon-text {
-    position: absolute;
-    top: 9px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: #fff;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    font-size: 13px;
-    text-transform: uppercase;
-  }
+    .hand-underline svg {
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 14px;
+    }
 
-  /* CTA laranja com leve gradiente do screenshot */
-  .cta-orange {
-    background: linear-gradient(180deg, #FF6B2B 0%, #FF3B1F 100%);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-  }
-  .cta-orange:hover {
-    transform: scale(1.02);
-    filter: brightness(1.05);
-    box-shadow: 0 12px 30px -8px rgba(255, 59, 31, 0.55);
-  }
+    /* Hand-drawn circle around price */
+    .price-circle {
+      position: relative;
+      display: inline-block;
+    }
 
-  .cta-green {
-    background: linear-gradient(180deg, #00DD5C 0%, #00C853 100%);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-  }
-  .cta-green:hover {
-    transform: scale(1.02);
-    filter: brightness(1.05);
-    box-shadow: 0 12px 30px -8px rgba(0, 200, 83, 0.55);
-  }
+    .price-circle svg.circle-svg {
+      position: absolute;
+      inset: -18px -10px -14px -10px;
+      width: calc(100% + 20px);
+      height: calc(100% + 32px);
+      pointer-events: none;
+    }
 
-  /* Checkmark com círculo outline (estilo screenshot) */
-  .check-circle {
-    width: 22px;
-    height: 22px;
-    border: 1.5px solid #00C853;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
+    /* === OFFER CARDS — estilo inspirado na referência === */
+    .offer-card {
+      position: relative;
+      background: #0F0F0F;
+      border-radius: 20px;
+      padding: 40px 32px 36px;
+      border: 1px solid #1F1F1F;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
 
-  /* Seta centralizada no rodapé do card Essencial */
-  .arrow-down-circle {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: linear-gradient(180deg, #FF6B2B 0%, #FF3B1F 100%);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 18px rgba(255, 59, 31, 0.45);
-    margin-top: 14px;
-  }
+    .offer-card:hover {
+      transform: translateY(-4px);
+    }
 
-  /* FAQ details styling */
-  details.faq-item {
-    border: 1px solid var(--cor-borda);
-    border-radius: 12px;
-    background: #0D0D0D;
-    transition: border-color 0.2s ease, transform 0.2s ease;
-    overflow: hidden;
-  }
-  details.faq-item + details.faq-item { margin-top: 12px; }
-  details.faq-item summary {
-    list-style: none;
-    cursor: pointer;
-    padding: 18px 22px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    color: #F5F5F5;
-    border-left: 4px solid transparent;
-    transition: border-color 0.2s ease, background 0.2s ease;
-  }
-  details.faq-item summary::-webkit-details-marker { display: none; }
-  details.faq-item summary:hover {
-    border-left-color: var(--cor-primaria);
-    background: #141414;
-  }
-  details.faq-item[open] summary {
-    border-left-color: var(--cor-primaria);
-  }
-  details.faq-item .faq-body {
-    padding: 0 22px 20px 26px;
-    color: var(--texto-secundario);
-    line-height: 1.7;
-  }
-  details.faq-item summary .chev {
-    transition: transform 0.25s ease;
-    flex-shrink: 0;
-  }
-  details.faq-item[open] summary .chev { transform: rotate(180deg); }
+    /* Glow externo laranja (card Essencial) */
+    .offer-card.essencial {
+      box-shadow:
+        0 0 0 1px #1F1F1F,
+        0 0 60px -10px rgba(255, 107, 43, 0.35),
+        0 25px 50px -25px rgba(255, 59, 31, 0.5);
+    }
 
-  .dashed-guarantee {
-    border: 2px dashed #00C853;
-  }
+    .offer-card.essencial:hover {
+      box-shadow:
+        0 0 0 1px #2A2A2A,
+        0 0 90px -10px rgba(255, 107, 43, 0.5),
+        0 30px 60px -25px rgba(255, 59, 31, 0.65);
+    }
 
-  .divider {
-    height: 1px;
-    background: #2A2A2A;
-    width: 100%;
-  }
+    /* Glow externo verde (card PRO) */
+    .offer-card.pro {
+      border: 2px solid #00C853;
+      box-shadow:
+        0 0 60px -10px rgba(0, 200, 83, 0.35),
+        0 25px 50px -25px rgba(0, 200, 83, 0.5);
+    }
 
-  .strike {
-    text-decoration: line-through;
-    color: var(--texto-secundario);
-  }
+    .offer-card.pro:hover {
+      box-shadow:
+        0 0 90px -10px rgba(0, 200, 83, 0.5),
+        0 30px 60px -25px rgba(0, 200, 83, 0.65);
+    }
 
-  /* Reduce text glare */
-  ::selection { background: #FF3B1F; color: #fff; }
+    /* Badge MAIS VENDIDO — banner com ponta inferior */
+    .ribbon-wrap {
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% + 20px);
+      pointer-events: none;
+    }
 
-  /* Fallback explícito de cores — garante render mesmo se o config do Tailwind não aplicar */
-  .text-textoclaro { color: #F5F5F5 !important; }
-  .text-textosec   { color: #A0A0A0 !important; }
-  .text-destaque   { color: #FFB627 !important; }
-  .text-sucesso    { color: #00C853 !important; }
-  .text-primaria   { color: #FF3B1F !important; }
-  .bg-base   { background-color: #0D0D0D !important; }
-  .bg-card   { background-color: #1A1A1A !important; }
-  .bg-primaria { background-color: #FF3B1F !important; }
-  .bg-sucesso  { background-color: #00C853 !important; }
-  .bg-destaque { background-color: #FFB627 !important; }
-  .border-borda    { border-color: #2A2A2A !important; }
-  .border-primaria { border-color: #FF3B1F !important; }
-  .border-destaque { border-color: #FFB627 !important; }
-  .border-sucesso  { border-color: #00C853 !important; }
+    .ribbon-wrap svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
 
-  /* Mobile optimizations */
-  /* Mobile optimizations */
-  @media (max-width: 767px) {
-    .hero-headline { font-size: 42px !important; line-height: 1.0; letter-spacing: -0.02em; }
-    .offer-card { padding: 32px 24px !important; }
-    .price-circle svg.circle-svg { inset: -14px -8px -12px -8px; width: calc(100% + 16px); height: calc(100% + 26px); }
-    section { padding-left: 20px !important; padding-right: 20px !important; }
-  }
+    .ribbon-text {
+      position: absolute;
+      top: 9px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
 
-  @media (max-width: 380px) {
-    .hero-headline { font-size: 36px !important; }
-    .price-circle span { font-size: 48px !important; }
-    .offer-card { padding: 28px 16px !important; }
-  }
+    /* CTA laranja com leve gradiente do screenshot */
+    .cta-orange {
+      background: linear-gradient(180deg, #FF6B2B 0%, #FF3B1F 100%);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
 
-  body {
-    overflow-x: hidden;
-    width: 100%;
-    text-rendering: optimizeLegibility;
-  }
-</style>
+    .cta-orange:hover {
+      transform: scale(1.02);
+      filter: brightness(1.05);
+      box-shadow: 0 12px 30px -8px rgba(255, 59, 31, 0.55);
+    }
 
-<!-- Meta Pixel Code -->
-<script>
-  !function (f, b, e, v, n, t, s) {
-    if (f.fbq) return; n = f.fbq = function () {
-      n.callMethod ?
-      n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-    };
-    if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-    n.queue = []; t = b.createElement(e); t.async = !0;
-    t.src = v; s = b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t, s)
-  }(window, document, 'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '2433399330439281');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2433399330439281&ev=PageView&noscript=1" alt="" /></noscript>
-<!-- End Meta Pixel Code -->
+    .cta-green {
+      background: linear-gradient(180deg, #00DD5C 0%, #00C853 100%);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
 
-<!-- UTMify -->
-<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids
-  async defer></script>
+    .cta-green:hover {
+      transform: scale(1.02);
+      filter: brightness(1.05);
+      box-shadow: 0 12px 30px -8px rgba(0, 200, 83, 0.55);
+    }
+
+    /* Checkmark com círculo outline (estilo screenshot) */
+    .check-circle {
+      width: 22px;
+      height: 22px;
+      border: 1.5px solid #00C853;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Seta centralizada no rodapé do card Essencial */
+    .arrow-down-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #FF6B2B 0%, #FF3B1F 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(255, 59, 31, 0.45);
+      margin-top: 14px;
+    }
+
+    /* FAQ details styling */
+    details.faq-item {
+      border: 1px solid var(--cor-borda);
+      border-radius: 12px;
+      background: #0D0D0D;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+      overflow: hidden;
+    }
+
+    details.faq-item+details.faq-item {
+      margin-top: 12px;
+    }
+
+    details.faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: #F5F5F5;
+      border-left: 4px solid transparent;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    details.faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.faq-item summary:hover {
+      border-left-color: var(--cor-primaria);
+      background: #141414;
+    }
+
+    details.faq-item[open] summary {
+      border-left-color: var(--cor-primaria);
+    }
+
+    details.faq-item .faq-body {
+      padding: 0 22px 20px 26px;
+      color: var(--texto-secundario);
+      line-height: 1.7;
+    }
+
+    details.faq-item summary .chev {
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    details.faq-item[open] summary .chev {
+      transform: rotate(180deg);
+    }
+
+    .dashed-guarantee {
+      border: 2px dashed #00C853;
+    }
+
+    .divider {
+      height: 1px;
+      background: #2A2A2A;
+      width: 100%;
+    }
+
+    .strike {
+      text-decoration: line-through;
+      color: var(--texto-secundario);
+    }
+
+    /* Reduce text glare */
+    ::selection {
+      background: #FF3B1F;
+      color: #fff;
+    }
+
+    /* Fallback explícito de cores — garante render mesmo se o config do Tailwind não aplicar */
+    .text-textoclaro {
+      color: #F5F5F5 !important;
+    }
+
+    .text-textosec {
+      color: #A0A0A0 !important;
+    }
+
+    .text-destaque {
+      color: #FFB627 !important;
+    }
+
+    .text-sucesso {
+      color: #00C853 !important;
+    }
+
+    .text-primaria {
+      color: #FF3B1F !important;
+    }
+
+    .bg-base {
+      background-color: #0D0D0D !important;
+    }
+
+    .bg-card {
+      background-color: #1A1A1A !important;
+    }
+
+    .bg-primaria {
+      background-color: #FF3B1F !important;
+    }
+
+    .bg-sucesso {
+      background-color: #00C853 !important;
+    }
+
+    .bg-destaque {
+      background-color: #FFB627 !important;
+    }
+
+    .border-borda {
+      border-color: #2A2A2A !important;
+    }
+
+    .border-primaria {
+      border-color: #FF3B1F !important;
+    }
+
+    .border-destaque {
+      border-color: #FFB627 !important;
+    }
+
+    .border-sucesso {
+      border-color: #00C853 !important;
+    }
+
+    /* Mobile optimizations */
+    /* Mobile optimizations */
+    @media (max-width: 767px) {
+      .hero-headline {
+        font-size: 42px !important;
+        line-height: 1.0;
+        letter-spacing: -0.02em;
+      }
+
+      .offer-card {
+        padding: 32px 24px !important;
+      }
+
+      .price-circle svg.circle-svg {
+        inset: -14px -8px -12px -8px;
+        width: calc(100% + 16px);
+        height: calc(100% + 26px);
+      }
+
+      section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero-headline {
+        font-size: 36px !important;
+      }
+
+      .price-circle span {
+        font-size: 48px !important;
+      }
+
+      .offer-card {
+        padding: 28px 16px !important;
+      }
+    }
+
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      text-rendering: optimizeLegibility;
+    }
+  </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2433399330439281');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2433399330439281&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- UTMify -->
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids
+    async defer></script>
 </head>
+
 <body class="bg-base text-textoclaro font-inter">
 
-<!-- ============================================= -->
-<!-- 1. BARRA SUPERIOR STICKY                       -->
-<!-- ============================================= -->
-<div class="sticky top-0 z-50 bg-primaria text-center text-xs md:text-base font-semibold py-3 px-4" style="color:#FFFFFF;">
-  <div class="flex items-center justify-center gap-1.5 md:gap-3">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0">
-      <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-      <line x1="12" y1="9" x2="12" y2="13"/>
-      <line x1="12" y1="17" x2="12.01" y2="17"/>
-    </svg>
-    <div class="flex items-center gap-2">
-      <span class="uppercase tracking-wider">Oferta de Lançamento</span>
-      <span class="hidden md:inline opacity-60">|</span>
-      <span class="bg-white/20 px-2 py-0.5 rounded font-mono text-sm md:text-base" id="countdown-timer">24:00:00</span>
-    </div>
-  </div>
-</div>
-
-<!-- ============================================= -->
-<!-- 2. HERO                                        -->
-<!-- ============================================= -->
-<section class="px-4 md:px-8 pt-6 md:pt-10 pb-20 md:pb-28">
-  <div class="max-w-5xl mx-auto text-center">
-    <!-- LOGO OUTFOOD MÉTODO 3R -->
-    <div class="flex flex-col items-center justify-center mb-4 md:mb-6">
-      <img src="logo.png" alt="OutFood Método 3R" class="w-full max-w-[100px] md:max-w-[160px] h-auto">
-    </div>
-
-    <p class="text-destaque uppercase tracking-[0.18em] text-xs md:text-sm font-bold mb-6">
-      Para donos de hamburgueria que estão cansados de trabalhar pro iFood
-    </p>
-
-    <h1 class="hero-headline font-anton text-textoclaro text-[64px] leading-[1.02] md:text-[64px] mb-8 uppercase">
-      O iFood Já Levou
-      <span class="hand-underline">
-        R$ 47.000
-        <svg viewBox="0 0 220 14" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M2 8 C 40 2, 80 12, 120 6 S 200 4, 218 9" fill="none" stroke="#FF3B1F" stroke-width="3.5" stroke-linecap="round"/>
-        </svg>
-      </span>
-      da Sua Hamburgueria Esse Ano.
-    </h1>
-
-
-
-    <p class="text-textosec text-sm md:text-lg max-w-3xl mx-auto mb-10 leading-relaxed px-2">
-      O Método OutFood é o passo a passo definitivo que tira sua hamburgueria
-      da dependência das plataformas, monta seu cardápio próprio em 1 tarde e
-      recupera o contato dos clientes que você nem sabia que tinha.
-    </p>
-
-    <!-- Checklists Amarelos (Sempre Lado a Lado) -->
-    <div class="grid grid-cols-2 gap-4 md:flex md:flex-wrap md:justify-center md:gap-x-16 mb-10 md:mb-14 max-w-4xl mx-auto px-4">
-      <div class="flex items-center justify-center md:justify-start gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        <span class="text-textoclaro text-[11px] md:text-base font-bold whitespace-nowrap">+1.847 hamburguerias</span>
-      </div>
-      <div class="flex items-center justify-center md:justify-start gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        <span class="text-textoclaro text-[11px] md:text-base font-bold whitespace-nowrap">Resultado 30 dias</span>
-      </div>
-    </div>
-
-    <!-- CTA gigante -->
-    <div class="mb-10">
-      <a href="#oferta-section" aria-label="Quero sair do iFood por 9 reais e 90 centavos"
-         class="cta-primary inline-block w-full sm:w-auto bg-primaria text-white font-anton uppercase tracking-wide text-xl sm:text-2xl md:text-3xl px-8 md:px-14 py-5 md:py-6 rounded-xl shadow-lg leading-tight">
-        Quero sair do iFood por R$ 9,90
-      </a>
-    </div>
-
-    <!-- Selos de Segurança (UX Melhorada: Ícones + Texto Legível) -->
-    <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-3 text-textosec text-[11px] md:text-sm font-medium opacity-80 mb-8">
-      <span class="flex items-center gap-1.5">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-        </svg>
-        Compra 100% segura
-      </span>
-      <span class="flex items-center gap-1.5">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-        </svg>
-        Acesso em 2 minutos
-      </span>
-    </div>
-
-    <h2 class="text-textoclaro text-lg md:text-2xl font-semibold mb-6 max-w-3xl mx-auto leading-tight">
-      Veja como sair (ou reduzir pra 30%) em 30 dias sem perder um único cliente.
-    </h2>
-  </div>
-</section>
-
-<!-- ============================================= -->
-<!-- 3. SEÇÃO DOR                                   -->
-<!-- ============================================= -->
-<section class="bg-card px-4 md:px-8 py-12 md:py-20">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-10 md:mb-14 text-center leading-tight">
-      Se você é dono de hamburgueria,<br class="hidden md:block"> já passou por isso:
-    </h2>
-
-    <ul class="space-y-5 md:space-y-6">
-      <li class="flex items-start gap-4">
-        <span class="mt-1 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </span>
-        <span class="text-textoclaro text-base md:text-lg">Termina o mês faturando bem, mas o iFood ficou com mais lucro do que você</span>
-      </li>
-      <li class="flex items-start gap-4">
-        <span class="mt-1 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </span>
-        <span class="text-textoclaro text-base md:text-lg">Acha que paga 27% de taxa, mas o número real passa de 35%</span>
-      </li>
-      <li class="flex items-start gap-4">
-        <span class="mt-1 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </span>
-        <span class="text-textoclaro text-base md:text-lg">Não tem o número de UM cliente sequer que comprou pelo aplicativo</span>
-      </li>
-      <li class="flex items-start gap-4">
-        <span class="mt-1 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </span>
-        <span class="text-textoclaro text-base md:text-lg">Toda promoção que você cria a plataforma “abraça”</span>
-      </li>
-      <li class="flex items-start gap-4">
-        <span class="mt-1 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </span>
-        <span class="text-textoclaro text-base md:text-lg">Já tentou WhatsApp mas o cliente esquece e volta pro app</span>
-      </li>
-      <li class="flex items-start gap-4">
-        <span class="mt-1 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </span>
-        <span class="text-textoclaro text-base md:text-lg">O motoboy do iFood demora e a culpa volta pra você na avaliação</span>
-      </li>
-      <li class="flex items-start gap-4">
-        <span class="mt-1 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </span>
-        <span class="text-textoclaro text-base md:text-lg">Sabe que se a taxa subir mais 5%, sua hamburgueria não fecha o mês</span>
-      </li>
-    </ul>
-
-    <div class="mt-12 bg-base border-l-4 border-primaria p-6 md:p-8 rounded-r-lg">
-      <p class="font-anton uppercase text-2xl md:text-3xl text-textoclaro tracking-wide leading-tight">
-        O iFood não é seu parceiro. <span class="text-destaque">VOCÊ</span> é o produto dele.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================= -->
-<!-- 4. SEÇÃO TRANSFORMAÇÃO                         -->
-<!-- ============================================= -->
-<section class="bg-base px-4 md:px-8 py-12 md:py-20">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-10 md:mb-14 text-center leading-tight">
-      Imagina ter, em 30 dias:
-    </h2>
-
-    <ul class="space-y-5 md:space-y-6">
-      <li class="flex items-start gap-4">
-        <span class="mt-1 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-        </span>
-        <span class="text-textoclaro text-base md:text-lg">40% do faturamento vindo direto pelo Whats, sem taxa</span>
-      </li>
-      <li class="flex items-start gap-4">
-        <span class="mt-1 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-        </span>
-        <span class="text-textoclaro text-base md:text-lg">Lista de clientes recorrentes pedindo direto com você</span>
-      </li>
-      <li class="flex items-start gap-4">
-        <span class="mt-1 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-        </span>
-        <span class="text-textoclaro text-base md:text-lg">Cardápio digital próprio no ar (menos de R$ 30/mês)</span>
-      </li>
-      <li class="flex items-start gap-4">
-        <span class="mt-1 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-        </span>
-        <span class="text-textoclaro text-base md:text-lg">Sistema de cupom que faz cliente do iFood migrar voluntariamente</span>
-      </li>
-      <li class="flex items-start gap-4">
-        <span class="mt-1 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-        </span>
-        <span class="text-textoclaro text-base md:text-lg">Script de embalagem que captura o número em 9 de cada 10 entregas</span>
-      </li>
-      <li class="flex items-start gap-4">
-        <span class="mt-1 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-        </span>
-        <span class="text-textoclaro text-base md:text-lg">Plano de 30 dias passo a passo</span>
-      </li>
-      <li class="flex items-start gap-4">
-        <span class="mt-1 flex-shrink-0">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-        </span>
-        <span class="text-textoclaro text-base md:text-lg">Liberdade de escolher: continuar com 30% ou sair de vez</span>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============================================= -->
-<!-- 5. APRESENTAÇÃO DO MÉTODO 3R                   -->
-<!-- ============================================= -->
-<section class="bg-card px-4 md:px-8 py-12 md:py-20">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-12 md:mb-16 text-center leading-tight">
-      Apresentando o Método 3R OutFood
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-      <!-- CARD 1 -->
-      <div class="card-hover bg-base rounded-2xl p-6 md:p-8 border-t-4 border-primaria">
-        <div class="mb-6">
-          <svg width="48" height="48" md:width="56" md:height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <circle cx="32" cy="32" r="28" fill="#FF3B1F" opacity="0.12"/>
-            <circle cx="32" cy="32" r="20" fill="#FF3B1F" opacity="0.25"/>
-            <path d="M22 32a10 10 0 0 1 18-6" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" fill="none"/>
-            <path d="M40 22v6h-6" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <path d="M42 32a10 10 0 0 1-18 6" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" fill="none"/>
-            <path d="M24 42v-6h6" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
-        </div>
-        <h3 class="font-anton text-textoclaro text-3xl uppercase mb-4">Recuperar</h3>
-        <p class="text-textosec leading-relaxed">
-          Como pegar o contato dos clientes que já compraram pelo iFood
-          usando embalagem, atendimento e cupons inteligentes. Sem violar
-          termo nenhum.
-        </p>
-      </div>
-
-      <!-- CARD 2 -->
-      <div class="card-hover bg-base rounded-2xl p-6 md:p-8 border-t-4 border-destaque">
-        <div class="mb-6">
-          <svg width="48" height="48" md:width="56" md:height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <circle cx="32" cy="32" r="28" fill="#FFB627" opacity="0.12"/>
-            <circle cx="32" cy="32" r="20" fill="#FFB627" opacity="0.25"/>
-            <path d="M18 38l10-10 7 7 11-11" stroke="#FFB627" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <path d="M38 24h8v8" stroke="#FFB627" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
-        </div>
-        <h3 class="font-anton text-textoclaro text-3xl uppercase mb-4">Redirecionar</h3>
-        <p class="text-textosec leading-relaxed">
-          Como migrar o cliente pro seu canal próprio sem queimar a
-          relação com a plataforma. Estratégia gradual, no seu tempo.
-        </p>
-      </div>
-
-      <!-- CARD 3 -->
-      <div class="card-hover bg-base rounded-2xl p-6 md:p-8 border-t-4 border-sucesso">
-        <div class="mb-6">
-          <svg width="48" height="48" md:width="56" md:height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <circle cx="32" cy="32" r="28" fill="#00C853" opacity="0.12"/>
-            <circle cx="32" cy="32" r="20" fill="#00C853" opacity="0.25"/>
-            <path d="M22 30l4 4 12-12" stroke="#00C853" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <path d="M44 32a12 12 0 1 1-12-12" stroke="#00C853" stroke-width="3" stroke-linecap="round" fill="none"/>
-          </svg>
-        </div>
-        <h3 class="font-anton text-textoclaro text-3xl uppercase mb-4">Reter</h3>
-        <p class="text-textosec leading-relaxed">
-          Como fazer o cliente comprar de novo direto com você. Mensagem
-          certa, hora certa, oferta certa.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================= -->
-<!-- 6. MÓDULOS DO CURSO                            -->
-<!-- ============================================= -->
-<section class="bg-base px-4 md:px-8 py-12 md:py-20">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-12 md:mb-16 text-center leading-tight">
-      Tudo que você recebe ao entrar no OutFood:
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- MÓDULO 1 -->
-      <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
-        <div class="flex items-start gap-5">
-          <div class="flex-shrink-0">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-            </svg>
-          </div>
-          <div>
-            <div class="font-anton text-primaria text-5xl leading-none mb-2">01</div>
-            <h3 class="text-textoclaro font-bold text-lg md:text-xl mb-2">A Conta Real do iFood <span class="text-textosec font-normal text-sm">(15 min)</span></h3>
-            <p class="text-textosec leading-relaxed">A planilha que mostra quanto você está perdendo de verdade. Spoiler: não são os 27% que aparecem na fatura.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- MÓDULO 2 -->
-      <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
-        <div class="flex items-start gap-5">
-          <div class="flex-shrink-0">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polygon points="5 3 19 12 5 21 5 3"/>
-            </svg>
-          </div>
-          <div>
-            <div class="font-anton text-primaria text-5xl leading-none mb-2">02</div>
-            <h3 class="text-textoclaro font-bold text-lg md:text-xl mb-2">Cardápio Digital Próprio em 1 Tarde <span class="text-textosec font-normal text-sm">(30 min)</span></h3>
-            <p class="text-textosec leading-relaxed">Walk-through passo a passo. No fim do módulo, seu cardápio está NO AR.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- MÓDULO 3 -->
-      <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
-        <div class="flex items-start gap-5">
-          <div class="flex-shrink-0">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polygon points="5 3 19 12 5 21 5 3"/>
-            </svg>
-          </div>
-          <div>
-            <div class="font-anton text-primaria text-5xl leading-none mb-2">03</div>
-            <h3 class="text-textoclaro font-bold text-lg md:text-xl mb-2">WhatsApp Business Configurado pra Vender <span class="text-textosec font-normal text-sm">(25 min)</span></h3>
-            <p class="text-textosec leading-relaxed">Catálogo, mensagem automática, etiqueta e o erro fatal que faz 70% dos donos perderem cliente.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- MÓDULO 4 -->
-      <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
-        <div class="flex items-start gap-5">
-          <div class="flex-shrink-0">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polygon points="5 3 19 12 5 21 5 3"/>
-            </svg>
-          </div>
-          <div>
-            <div class="font-anton text-primaria text-5xl leading-none mb-2">04</div>
-            <h3 class="text-textoclaro font-bold text-lg md:text-xl mb-2">Recuperando o Contato dos Clientes Fantasmas <span class="text-textosec font-normal text-sm">(20 min)</span></h3>
-            <p class="text-textosec leading-relaxed">A parte mais valiosa do curso. Como capturar o número de quem comprou pelo iFood — ético, legal e funcional.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- MÓDULO 5 -->
-      <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
-        <div class="flex items-start gap-5">
-          <div class="flex-shrink-0">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polygon points="5 3 19 12 5 21 5 3"/>
-            </svg>
-          </div>
-          <div>
-            <div class="font-anton text-primaria text-5xl leading-none mb-2">05</div>
-            <h3 class="text-textoclaro font-bold text-lg md:text-xl mb-2">A Migração de 30 Dias <span class="text-textosec font-normal text-sm">(35 min)</span></h3>
-            <p class="text-textosec leading-relaxed">Plano semana a semana. Cupons de migração, gatilho de recompra, comunicado pro cliente.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- MÓDULO 6 -->
-      <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
-        <div class="flex items-start gap-5">
-          <div class="flex-shrink-0">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polygon points="5 3 19 12 5 21 5 3"/>
-            </svg>
-          </div>
-          <div>
-            <div class="font-anton text-primaria text-5xl leading-none mb-2">06</div>
-            <h3 class="text-textoclaro font-bold text-lg md:text-xl mb-2">Motoboy Sem Plataforma <span class="text-textosec font-normal text-sm">(20 min)</span></h3>
-            <p class="text-textosec leading-relaxed">Como contratar motoboy próprio, calcular taxa de entrega justa, roteirização gratuita.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Box mostarda -->
-    <div class="mt-12 bg-destaque text-black rounded-2xl p-6 md:p-8 flex items-center gap-4 max-w-3xl mx-auto">
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="flex-shrink-0">
-        <path d="M9 21h6"/>
-        <path d="M12 17v4"/>
-        <path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1 1 1.7V17h5v-1.4c0-.7.4-1.3 1-1.7A6 6 0 0 0 12 3z"/>
+  <!-- ============================================= -->
+  <!-- 1. BARRA SUPERIOR STICKY                       -->
+  <!-- ============================================= -->
+  <div class="sticky top-0 z-50 bg-primaria text-center text-xs md:text-base font-semibold py-3 px-4"
+    style="color:#FFFFFF;">
+    <div class="flex items-center justify-center gap-1.5 md:gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF"
+        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0">
+        <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+        <line x1="12" y1="9" x2="12" y2="13" />
+        <line x1="12" y1="17" x2="12.01" y2="17" />
       </svg>
-      <p class="text-base md:text-lg font-semibold">
-        Total: 2h30 de conteúdo direto. Você aplica tudo em um único fim de semana.
-      </p>
+      <div class="flex items-center gap-2">
+        <span class="uppercase tracking-wider">Oferta de Lançamento</span>
+        <span class="hidden md:inline opacity-60">|</span>
+        <span class="bg-white/20 px-2 py-0.5 rounded font-mono text-sm md:text-base"
+          id="countdown-timer">24:00:00</span>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- ============================================= -->
-<!-- 6.5 BÔNUS EXCLUSIVOS DO PRO                    -->
-<!-- ============================================= -->
-<section class="bg-base px-4 md:px-8 py-12 md:py-20 relative overflow-hidden">
-  <!-- Glow ambiental sutil mostarda -->
-  <div aria-hidden="true" class="pointer-events-none absolute inset-0" style="background: radial-gradient(ellipse at top, rgba(255,182,39,0.08), transparent 60%);"></div>
-
-  <div class="max-w-6xl mx-auto relative">
-    <p class="text-destaque uppercase tracking-[0.18em] text-xs md:text-sm font-bold mb-4 text-center">
-      Exclusivo do Plano PRO
-    </p>
-    <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-4 text-center leading-tight">
-      + 4 Bônus que valem mais que o curso
-    </h2>
-    <p class="text-textosec text-center text-base md:text-lg mb-12 md:mb-16 max-w-2xl mx-auto px-2">
-      Material extra liberado junto com o acesso pra você acelerar a aplicação do método.
-    </p>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-      <!-- BÔNUS 1 — Bíblia das 80 Receitas -->
-      <div class="card-hover bg-card rounded-2xl p-6 md:p-8 border border-borda relative overflow-hidden">
-        <div class="absolute top-4 right-4 bg-destaque text-black text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded">Bônus 01</div>
-
-        <div class="mb-6 relative h-48 flex items-center justify-center overflow-hidden rounded-xl">
-          <img src="bonus1.png" alt="Bíblia das 80 Receitas" class="max-h-full w-auto object-contain">
-        </div>
-        <h3 class="text-textoclaro font-bold text-xl md:text-2xl mb-3 leading-snug">
-          Bíblia das 80 Receitas de Hambúrguer
-        </h3>
-        <p class="text-textosec leading-relaxed">
-          80 receitas com <strong class="text-textoclaro">ficha técnica completa</strong>: ingredientes, modo de preparo, custo unitário, sugestão de venda e tempo de execução. Pronta pra colar na cozinha.
-        </p>
+  <!-- ============================================= -->
+  <!-- 2. HERO                                        -->
+  <!-- ============================================= -->
+  <section class="px-4 md:px-8 pt-6 md:pt-10 pb-20 md:pb-28">
+    <div class="max-w-5xl mx-auto text-center">
+      <!-- LOGO OUTFOOD MÉTODO 3R -->
+      <div class="flex flex-col items-center justify-center mb-4 md:mb-6">
+        <img src="logo.png" alt="OutFood Método 3R" class="w-full max-w-[100px] md:max-w-[160px] h-auto">
       </div>
 
-      <!-- BÔNUS 2 — Kit Identidade Visual -->
-      <div class="card-hover bg-card rounded-2xl p-6 md:p-8 border border-borda relative overflow-hidden">
-        <div class="absolute top-4 right-4 bg-destaque text-black text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded">Bônus 02</div>
-
-        <div class="mb-6 relative h-48 flex items-center justify-center overflow-hidden rounded-xl">
-          <img src="bonus2.png" alt="Kit Identidade Visual" class="max-h-full w-auto object-contain">
-        </div>
-        <h3 class="text-textoclaro font-bold text-xl md:text-2xl mb-3 leading-snug">
-          Kit Identidade Visual Pronta pra Hamburgueria
-        </h3>
-        <p class="text-textosec leading-relaxed">
-          Logo editável + paleta + tipografia + manual de marca em <strong class="text-textoclaro">5 estilos</strong>:
-          clássico, dark gourmet, food truck, smash e retrô. Escolhe e usa.
-        </p>
-      </div>
-
-      <!-- BÔNUS 3 — Pack Receitas Famosas -->
-      <div class="card-hover bg-card rounded-2xl p-6 md:p-8 border border-borda relative overflow-hidden">
-        <div class="absolute top-4 right-4 bg-destaque text-black text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded">Bônus 03</div>
-
-        <div class="mb-6 relative h-48 flex items-center justify-center overflow-hidden rounded-xl">
-          <img src="bonus3.png" alt="Pack Receitas Famosas" class="max-h-full w-auto object-contain">
-        </div>
-        <h3 class="text-textoclaro font-bold text-xl md:text-2xl mb-3 leading-snug">
-          Pack Receitas de Hambúrguer Famoso (Réplicas)
-        </h3>
-        <p class="text-textosec leading-relaxed">
-          Réplicas dos hambúrgueres mais vendidos das maiores redes do Brasil. <strong class="text-textoclaro">Aprenda, adapte e venda</strong> no cardápio da sua casa.
-        </p>
-      </div>
-
-      <!-- BÔNUS 4 — Calculadora de Precificação -->
-      <div class="card-hover bg-card rounded-2xl p-6 md:p-8 border border-borda relative overflow-hidden">
-        <div class="absolute top-4 right-4 bg-destaque text-black text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded">Bônus 04</div>
-
-        <div class="mb-6 relative h-48 flex items-center justify-center overflow-hidden rounded-xl">
-          <img src="bonus4.png" alt="Calculadora de Precificação" class="max-h-full w-auto object-contain">
-        </div>
-
-        <h3 class="text-textoclaro font-bold text-xl md:text-2xl mb-3 leading-snug">
-          Calculadora de Precificação de Combo
-        </h3>
-        <p class="text-textosec leading-relaxed">
-          Planilha automática que calcula o <strong class="text-textoclaro">preço ideal de cada combo</strong>
-          considerando margem, taxa de cartão, embalagem e entrega. Você só preenche os custos.
-        </p>
-      </div>
-    </div>
-
-    <!-- Selo de valor agregado -->
-    <div class="mt-12 md:mt-14 max-w-2xl mx-auto text-center bg-card border border-destaque/40 rounded-2xl p-6 md:p-7" style="border-color: rgba(255,182,39,0.4);">
-      <p class="text-textosec text-sm uppercase tracking-widest mb-2">Valor real dos bônus</p>
-      <p class="font-anton text-destaque text-4xl md:text-5xl leading-none">
-        <span class="strike text-textosec text-2xl md:text-3xl mr-2">R$ 397,00</span> R$ 0,00
+      <p class="text-destaque uppercase tracking-[0.18em] text-xs md:text-sm font-bold mb-6">
+        Para donos de hamburgueria que estão cansados de trabalhar pro iFood
       </p>
-      <p class="text-textoclaro text-sm md:text-base mt-3">
-        Inclusos no Plano PRO. Sem upsell. Sem cobrança extra.
+
+      <h1 class="hero-headline font-anton text-textoclaro text-[64px] leading-[1.02] md:text-[64px] mb-8 uppercase">
+        O iFood Já Levou
+        <span class="hand-underline">
+          R$ 47.000
+          <svg viewBox="0 0 220 14" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M2 8 C 40 2, 80 12, 120 6 S 200 4, 218 9" fill="none" stroke="#FF3B1F" stroke-width="3.5"
+              stroke-linecap="round" />
+          </svg>
+        </span>
+        da Sua Hamburgueria Esse Ano.
+      </h1>
+
+
+
+      <p class="text-textosec text-sm md:text-lg max-w-3xl mx-auto mb-10 leading-relaxed px-2">
+        O Método OutFood é o passo a passo definitivo que tira sua hamburgueria
+        da dependência das plataformas, monta seu cardápio próprio em 1 tarde e
+        recupera o contato dos clientes que você nem sabia que tinha.
       </p>
+
+      <!-- Checklists Amarelos (Sempre Lado a Lado) -->
+      <div
+        class="grid grid-cols-2 gap-4 md:flex md:flex-wrap md:justify-center md:gap-x-16 mb-10 md:mb-14 max-w-4xl mx-auto px-4">
+        <div class="flex items-center justify-center md:justify-start gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="#FFB627" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          <span class="text-textoclaro text-[11px] md:text-base font-bold whitespace-nowrap">+1.847 hamburguerias</span>
+        </div>
+        <div class="flex items-center justify-center md:justify-start gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="#FFB627" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          <span class="text-textoclaro text-[11px] md:text-base font-bold whitespace-nowrap">Resultado 30 dias</span>
+        </div>
+      </div>
+
+      <!-- CTA gigante -->
+      <div class="mb-10">
+        <a href="#oferta-section" aria-label="Quero sair do iFood por 9 reais e 90 centavos"
+          class="cta-primary inline-block w-full sm:w-auto bg-primaria text-white font-anton uppercase tracking-wide text-xl sm:text-2xl md:text-3xl px-8 md:px-14 py-5 md:py-6 rounded-xl shadow-lg leading-tight">
+          Quero sair do iFood por R$ 9,90
+        </a>
+      </div>
+
+      <!-- Selos de Segurança (UX Melhorada: Ícones + Texto Legível) -->
+      <div
+        class="flex flex-wrap justify-center items-center gap-x-10 gap-y-3 text-textosec text-[11px] md:text-sm font-medium opacity-80 mb-8">
+        <span class="flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>
+          Compra 100% segura
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
+          Acesso em 2 minutos
+        </span>
+      </div>
+
+      <h2 class="text-textoclaro text-lg md:text-2xl font-semibold mb-6 max-w-3xl mx-auto leading-tight">
+        Veja como sair (ou reduzir pra 30%) em 30 dias sem perder um único cliente.
+      </h2>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================= -->
-<!-- 7. CARDS DE OFERTA                             -->
-<!-- ============================================= -->
-<section id="oferta-section" class="bg-base px-4 md:px-8 py-12 md:py-20">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-4 text-center leading-tight">
-      Escolha o plano ideal pra sua hamburgueria
-    </h2>
-    <p class="text-textosec text-center text-base md:text-lg mb-14 md:mb-20">
-      Acesso vitalício. Garantia incondicional. Sem mensalidade.
-    </p>
+  <!-- ============================================= -->
+  <!-- 3. SEÇÃO DOR                                   -->
+  <!-- ============================================= -->
+  <section class="bg-card px-4 md:px-8 py-12 md:py-20">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-10 md:mb-14 text-center leading-tight">
+        Se você é dono de hamburgueria,<br class="hidden md:block"> já passou por isso:
+      </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 relative">
-      <!-- ============================================= -->
-      <!-- CARD ESSENCIAL                                -->
-      <!-- ============================================= -->
-      <div class="offer-card essencial">
-        <h3 class="text-textoclaro font-bold text-2xl text-center mb-1">Plano Essencial</h3>
-        <p class="text-textosec text-xs uppercase tracking-[0.2em] text-center mb-7">Pagamento Único</p>
-
-        <div class="text-center mb-5">
-          <div class="price-circle inline-block">
-            <span class="font-anton text-textoclaro text-6xl md:text-7xl leading-none">R$ 9,90</span>
-            <svg class="circle-svg" viewBox="0 0 240 130" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M28 64 C 22 22, 92 10, 132 12 C 198 16, 226 48, 218 80 C 210 114, 142 124, 92 120 C 42 116, 16 96, 22 70 C 26 48, 64 30, 112 28"
-                    fill="none" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
-              <path d="M34 70 C 30 30, 96 18, 130 22 C 188 26, 218 56, 210 82"
-                    fill="none" stroke="#FF3B1F" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+      <ul class="space-y-5 md:space-y-6">
+        <li class="flex items-start gap-4">
+          <span class="mt-1 flex-shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
+          </span>
+          <span class="text-textoclaro text-base md:text-lg">Termina o mês faturando bem, mas o iFood ficou com mais
+            lucro do que você</span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="mt-1 flex-shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </span>
+          <span class="text-textoclaro text-base md:text-lg">Acha que paga 27% de taxa, mas o número real passa de
+            35%</span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="mt-1 flex-shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </span>
+          <span class="text-textoclaro text-base md:text-lg">Não tem o número de UM cliente sequer que comprou pelo
+            aplicativo</span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="mt-1 flex-shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </span>
+          <span class="text-textoclaro text-base md:text-lg">Toda promoção que você cria a plataforma “abraça”</span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="mt-1 flex-shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </span>
+          <span class="text-textoclaro text-base md:text-lg">Já tentou WhatsApp mas o cliente esquece e volta pro
+            app</span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="mt-1 flex-shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </span>
+          <span class="text-textoclaro text-base md:text-lg">O motoboy do iFood demora e a culpa volta pra você na
+            avaliação</span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="mt-1 flex-shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </span>
+          <span class="text-textoclaro text-base md:text-lg">Sabe que se a taxa subir mais 5%, sua hamburgueria não
+            fecha o mês</span>
+        </li>
+      </ul>
+
+      <div class="mt-12 bg-base border-l-4 border-primaria p-6 md:p-8 rounded-r-lg">
+        <p class="font-anton uppercase text-2xl md:text-3xl text-textoclaro tracking-wide leading-tight">
+          O iFood não é seu parceiro. <span class="text-destaque">VOCÊ</span> é o produto dele.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- 4. SEÇÃO TRANSFORMAÇÃO                         -->
+  <!-- ============================================= -->
+  <section class="bg-base px-4 md:px-8 py-12 md:py-20">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-10 md:mb-14 text-center leading-tight">
+        Imagina ter, em 30 dias:
+      </h2>
+
+      <ul class="space-y-5 md:space-y-6">
+        <li class="flex items-start gap-4">
+          <span class="mt-1 flex-shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </span>
+          <span class="text-textoclaro text-base md:text-lg">40% do faturamento vindo direto pelo Whats, sem taxa</span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="mt-1 flex-shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </span>
+          <span class="text-textoclaro text-base md:text-lg">Lista de clientes recorrentes pedindo direto com
+            você</span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="mt-1 flex-shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </span>
+          <span class="text-textoclaro text-base md:text-lg">Cardápio digital próprio no ar (menos de R$ 30/mês)</span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="mt-1 flex-shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </span>
+          <span class="text-textoclaro text-base md:text-lg">Sistema de cupom que faz cliente do iFood migrar
+            voluntariamente</span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="mt-1 flex-shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </span>
+          <span class="text-textoclaro text-base md:text-lg">Script de embalagem que captura o número em 9 de cada 10
+            entregas</span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="mt-1 flex-shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </span>
+          <span class="text-textoclaro text-base md:text-lg">Plano de 30 dias passo a passo</span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="mt-1 flex-shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </span>
+          <span class="text-textoclaro text-base md:text-lg">Liberdade de escolher: continuar com 30% ou sair de
+            vez</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- 5. APRESENTAÇÃO DO MÉTODO 3R                   -->
+  <!-- ============================================= -->
+  <section class="bg-card px-4 md:px-8 py-12 md:py-20">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-12 md:mb-16 text-center leading-tight">
+        Apresentando o Método 3R OutFood
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <!-- CARD 1 -->
+        <div class="card-hover bg-base rounded-2xl p-6 md:p-8 border-t-4 border-primaria">
+          <div class="mb-6">
+            <svg width="48" height="48" md:width="56" md:height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <circle cx="32" cy="32" r="28" fill="#FF3B1F" opacity="0.12" />
+              <circle cx="32" cy="32" r="20" fill="#FF3B1F" opacity="0.25" />
+              <path d="M22 32a10 10 0 0 1 18-6" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" fill="none" />
+              <path d="M40 22v6h-6" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                fill="none" />
+              <path d="M42 32a10 10 0 0 1-18 6" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" fill="none" />
+              <path d="M24 42v-6h6" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                fill="none" />
+            </svg>
+          </div>
+          <h3 class="font-anton text-textoclaro text-3xl uppercase mb-4">Recuperar</h3>
+          <p class="text-textosec leading-relaxed">
+            Como pegar o contato dos clientes que já compraram pelo iFood
+            usando embalagem, atendimento e cupons inteligentes. Sem violar
+            termo nenhum.
+          </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card-hover bg-base rounded-2xl p-6 md:p-8 border-t-4 border-destaque">
+          <div class="mb-6">
+            <svg width="48" height="48" md:width="56" md:height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <circle cx="32" cy="32" r="28" fill="#FFB627" opacity="0.12" />
+              <circle cx="32" cy="32" r="20" fill="#FFB627" opacity="0.25" />
+              <path d="M18 38l10-10 7 7 11-11" stroke="#FFB627" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+              <path d="M38 24h8v8" stroke="#FFB627" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                fill="none" />
+            </svg>
+          </div>
+          <h3 class="font-anton text-textoclaro text-3xl uppercase mb-4">Redirecionar</h3>
+          <p class="text-textosec leading-relaxed">
+            Como migrar o cliente pro seu canal próprio sem queimar a
+            relação com a plataforma. Estratégia gradual, no seu tempo.
+          </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card-hover bg-base rounded-2xl p-6 md:p-8 border-t-4 border-sucesso">
+          <div class="mb-6">
+            <svg width="48" height="48" md:width="56" md:height="56" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <circle cx="32" cy="32" r="28" fill="#00C853" opacity="0.12" />
+              <circle cx="32" cy="32" r="20" fill="#00C853" opacity="0.25" />
+              <path d="M22 30l4 4 12-12" stroke="#00C853" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+              <path d="M44 32a12 12 0 1 1-12-12" stroke="#00C853" stroke-width="3" stroke-linecap="round" fill="none" />
+            </svg>
+          </div>
+          <h3 class="font-anton text-textoclaro text-3xl uppercase mb-4">Reter</h3>
+          <p class="text-textosec leading-relaxed">
+            Como fazer o cliente comprar de novo direto com você. Mensagem
+            certa, hora certa, oferta certa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- 6. MÓDULOS DO CURSO                            -->
+  <!-- ============================================= -->
+  <section class="bg-base px-4 md:px-8 py-12 md:py-20">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-12 md:mb-16 text-center leading-tight">
+        Tudo que você recebe ao entrar no OutFood:
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- MÓDULO 1 -->
+        <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
+          <div class="flex items-start gap-5">
+            <div class="flex-shrink-0">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-anton text-primaria text-5xl leading-none mb-2">01</div>
+              <h3 class="text-textoclaro font-bold text-lg md:text-xl mb-2">A Conta Real do iFood <span
+                  class="text-textosec font-normal text-sm">(15 min)</span></h3>
+              <p class="text-textosec leading-relaxed">A planilha que mostra quanto você está perdendo de verdade.
+                Spoiler: não são os 27% que aparecem na fatura.</p>
+            </div>
           </div>
         </div>
 
-        <p class="text-textosec text-center text-sm mb-7 px-2">
-          Pra você que quer começar a aplicar e tirar resultado rápido.
+        <!-- MÓDULO 2 -->
+        <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
+          <div class="flex items-start gap-5">
+            <div class="flex-shrink-0">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-anton text-primaria text-5xl leading-none mb-2">02</div>
+              <h3 class="text-textoclaro font-bold text-lg md:text-xl mb-2">Cardápio Digital Próprio em 1 Tarde <span
+                  class="text-textosec font-normal text-sm">(30 min)</span></h3>
+              <p class="text-textosec leading-relaxed">Walk-through passo a passo. No fim do módulo, seu cardápio está
+                NO AR.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 3 -->
+        <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
+          <div class="flex items-start gap-5">
+            <div class="flex-shrink-0">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-anton text-primaria text-5xl leading-none mb-2">03</div>
+              <h3 class="text-textoclaro font-bold text-lg md:text-xl mb-2">WhatsApp Business Configurado pra Vender
+                <span class="text-textosec font-normal text-sm">(25 min)</span></h3>
+              <p class="text-textosec leading-relaxed">Catálogo, mensagem automática, etiqueta e o erro fatal que faz
+                70% dos donos perderem cliente.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 4 -->
+        <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
+          <div class="flex items-start gap-5">
+            <div class="flex-shrink-0">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-anton text-primaria text-5xl leading-none mb-2">04</div>
+              <h3 class="text-textoclaro font-bold text-lg md:text-xl mb-2">Recuperando o Contato dos Clientes Fantasmas
+                <span class="text-textosec font-normal text-sm">(20 min)</span></h3>
+              <p class="text-textosec leading-relaxed">A parte mais valiosa do curso. Como capturar o número de quem
+                comprou pelo iFood — ético, legal e funcional.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 5 -->
+        <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
+          <div class="flex items-start gap-5">
+            <div class="flex-shrink-0">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-anton text-primaria text-5xl leading-none mb-2">05</div>
+              <h3 class="text-textoclaro font-bold text-lg md:text-xl mb-2">A Migração de 30 Dias <span
+                  class="text-textosec font-normal text-sm">(35 min)</span></h3>
+              <p class="text-textosec leading-relaxed">Plano semana a semana. Cupons de migração, gatilho de recompra,
+                comunicado pro cliente.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 6 -->
+        <div class="card-hover bg-card rounded-2xl p-6 md:p-7 border border-borda">
+          <div class="flex items-start gap-5">
+            <div class="flex-shrink-0">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-anton text-primaria text-5xl leading-none mb-2">06</div>
+              <h3 class="text-textoclaro font-bold text-lg md:text-xl mb-2">Motoboy Sem Plataforma <span
+                  class="text-textosec font-normal text-sm">(20 min)</span></h3>
+              <p class="text-textosec leading-relaxed">Como contratar motoboy próprio, calcular taxa de entrega justa,
+                roteirização gratuita.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Box mostarda -->
+      <div class="mt-12 bg-destaque text-black rounded-2xl p-6 md:p-8 flex items-center gap-4 max-w-3xl mx-auto">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="flex-shrink-0">
+          <path d="M9 21h6" />
+          <path d="M12 17v4" />
+          <path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1 1 1.7V17h5v-1.4c0-.7.4-1.3 1-1.7A6 6 0 0 0 12 3z" />
+        </svg>
+        <p class="text-base md:text-lg font-semibold">
+          Total: 2h30 de conteúdo direto. Você aplica tudo em um único fim de semana.
         </p>
+      </div>
+    </div>
+  </section>
 
-        <div class="divider mb-7"></div>
+  <!-- ============================================= -->
+  <!-- 6.5 BÔNUS EXCLUSIVOS DO PRO                    -->
+  <!-- ============================================= -->
+  <section class="bg-base px-4 md:px-8 py-12 md:py-20 relative overflow-hidden">
+    <!-- Glow ambiental sutil mostarda -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0"
+      style="background: radial-gradient(ellipse at top, rgba(255,182,39,0.08), transparent 60%);"></div>
 
-        <ul class="space-y-4 mb-8">
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">Curso completo Método 3R (6 módulos, 2h30)</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">80 mensagens de WhatsApp prontas</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">Cardápio Digital pronto pra editar (Canva)</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">Planilha “Quanto Você Tá Perdendo no iFood”</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">Script de Atendimento imprimível</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">Acesso vitalício à plataforma</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">Garantia incondicional de 7 dias</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">Suporte por email</span>
-          </li>
-        </ul>
+    <div class="max-w-6xl mx-auto relative">
+      <p class="text-destaque uppercase tracking-[0.18em] text-xs md:text-sm font-bold mb-4 text-center">
+        Exclusivo do Plano PRO
+      </p>
+      <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-4 text-center leading-tight">
+        + 4 Bônus que valem mais que o curso
+      </h2>
+      <p class="text-textosec text-center text-base md:text-lg mb-12 md:mb-16 max-w-2xl mx-auto px-2">
+        Material extra liberado junto com o acesso pra você acelerar a aplicação do método.
+      </p>
 
-        <a href="#" class="cta-orange block text-white text-center font-bold uppercase tracking-wide text-sm md:text-base py-4 rounded-xl">
-          Quero começar pelo Essencial
-        </a>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <!-- BÔNUS 1 — Bíblia das 80 Receitas -->
+        <div class="card-hover bg-card rounded-2xl p-6 md:p-8 border border-borda relative overflow-hidden">
+          <div
+            class="absolute top-4 right-4 bg-destaque text-black text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded">
+            Bônus 01</div>
 
-        <div class="text-center">
-          <p class="text-destaque text-xs mt-4">
-            Acesso imediato à plataforma. Compra 100% segura.<br>
-            Garantia de 7 dias ou seu dinheiro de volta.
+          <div class="mb-6 relative h-48 flex items-center justify-center overflow-hidden rounded-xl">
+            <img src="bonus1.png" alt="Bíblia das 80 Receitas" class="max-h-full w-auto object-contain">
+          </div>
+          <h3 class="text-textoclaro font-bold text-xl md:text-2xl mb-3 leading-snug">
+            Bíblia das 80 Receitas de Hambúrguer
+          </h3>
+          <p class="text-textosec leading-relaxed">
+            80 receitas com <strong class="text-textoclaro">ficha técnica completa</strong>: ingredientes, modo de
+            preparo, custo unitário, sugestão de venda e tempo de execução. Pronta pra colar na cozinha.
+          </p>
+        </div>
+
+        <!-- BÔNUS 2 — Kit Identidade Visual -->
+        <div class="card-hover bg-card rounded-2xl p-6 md:p-8 border border-borda relative overflow-hidden">
+          <div
+            class="absolute top-4 right-4 bg-destaque text-black text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded">
+            Bônus 02</div>
+
+          <div class="mb-6 relative h-48 flex items-center justify-center overflow-hidden rounded-xl">
+            <img src="bonus2.png" alt="Kit Identidade Visual" class="max-h-full w-auto object-contain">
+          </div>
+          <h3 class="text-textoclaro font-bold text-xl md:text-2xl mb-3 leading-snug">
+            Kit Identidade Visual Pronta pra Hamburgueria
+          </h3>
+          <p class="text-textosec leading-relaxed">
+            Logo editável + paleta + tipografia + manual de marca em <strong class="text-textoclaro">5 estilos</strong>:
+            clássico, dark gourmet, food truck, smash e retrô. Escolhe e usa.
+          </p>
+        </div>
+
+        <!-- BÔNUS 3 — Pack Receitas Famosas -->
+        <div class="card-hover bg-card rounded-2xl p-6 md:p-8 border border-borda relative overflow-hidden">
+          <div
+            class="absolute top-4 right-4 bg-destaque text-black text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded">
+            Bônus 03</div>
+
+          <div class="mb-6 relative h-48 flex items-center justify-center overflow-hidden rounded-xl">
+            <img src="bonus3.png" alt="Pack Receitas Famosas" class="max-h-full w-auto object-contain">
+          </div>
+          <h3 class="text-textoclaro font-bold text-xl md:text-2xl mb-3 leading-snug">
+            Pack Receitas de Hambúrguer Famoso (Réplicas)
+          </h3>
+          <p class="text-textosec leading-relaxed">
+            Réplicas dos hambúrgueres mais vendidos das maiores redes do Brasil. <strong
+              class="text-textoclaro">Aprenda, adapte e venda</strong> no cardápio da sua casa.
+          </p>
+        </div>
+
+        <!-- BÔNUS 4 — Calculadora de Precificação -->
+        <div class="card-hover bg-card rounded-2xl p-6 md:p-8 border border-borda relative overflow-hidden">
+          <div
+            class="absolute top-4 right-4 bg-destaque text-black text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded">
+            Bônus 04</div>
+
+          <div class="mb-6 relative h-48 flex items-center justify-center overflow-hidden rounded-xl">
+            <img src="bonus4.png" alt="Calculadora de Precificação" class="max-h-full w-auto object-contain">
+          </div>
+
+          <h3 class="text-textoclaro font-bold text-xl md:text-2xl mb-3 leading-snug">
+            Calculadora de Precificação de Combo
+          </h3>
+          <p class="text-textosec leading-relaxed">
+            Planilha automática que calcula o <strong class="text-textoclaro">preço ideal de cada combo</strong>
+            considerando margem, taxa de cartão, embalagem e entrega. Você só preenche os custos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Selo de valor agregado -->
+      <div class="mt-12 md:mt-14 max-w-2xl mx-auto text-center bg-card border border-destaque/40 rounded-2xl p-6 md:p-7"
+        style="border-color: rgba(255,182,39,0.4);">
+        <p class="text-textosec text-sm uppercase tracking-widest mb-2">Valor real dos bônus</p>
+        <p class="font-anton text-destaque text-4xl md:text-5xl leading-none">
+          <span class="strike text-textosec text-2xl md:text-3xl mr-2">R$ 397,00</span> R$ 0,00
+        </p>
+        <p class="text-textoclaro text-sm md:text-base mt-3">
+          Inclusos no Plano PRO. Sem upsell. Sem cobrança extra.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- 7. CARDS DE OFERTA                             -->
+  <!-- ============================================= -->
+  <section id="oferta-section" class="bg-base px-4 md:px-8 py-12 md:py-20">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-4 text-center leading-tight">
+        Escolha o plano ideal pra sua hamburgueria
+      </h2>
+      <p class="text-textosec text-center text-base md:text-lg mb-14 md:mb-20">
+        Acesso vitalício. Garantia incondicional. Sem mensalidade.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 relative">
+        <!-- ============================================= -->
+        <!-- CARD ESSENCIAL                                -->
+        <!-- ============================================= -->
+        <div class="offer-card essencial">
+          <h3 class="text-textoclaro font-bold text-2xl text-center mb-1">Plano Essencial</h3>
+          <p class="text-textosec text-xs uppercase tracking-[0.2em] text-center mb-7">Pagamento Único</p>
+
+          <div class="text-center mb-5">
+            <div class="price-circle inline-block">
+              <span class="font-anton text-textoclaro text-6xl md:text-7xl leading-none">R$ 9,90</span>
+              <svg class="circle-svg" viewBox="0 0 240 130" preserveAspectRatio="none" aria-hidden="true">
+                <path
+                  d="M28 64 C 22 22, 92 10, 132 12 C 198 16, 226 48, 218 80 C 210 114, 142 124, 92 120 C 42 116, 16 96, 22 70 C 26 48, 64 30, 112 28"
+                  fill="none" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                  opacity="0.95" />
+                <path d="M34 70 C 30 30, 96 18, 130 22 C 188 26, 218 56, 210 82" fill="none" stroke="#FF3B1F"
+                  stroke-width="2" stroke-linecap="round" opacity="0.55" />
+              </svg>
+            </div>
+          </div>
+
+          <p class="text-textosec text-center text-sm mb-7 px-2">
+            Pra você que quer começar a aplicar e tirar resultado rápido.
           </p>
 
-          <!-- Seta centralizada apontando pro próximo card -->
-          <div class="arrow-down-circle" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="12" y1="5" x2="12" y2="19"/>
-              <polyline points="19 12 12 19 5 12"/>
+          <div class="divider mb-7"></div>
+
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">Curso completo Método 3R (6 módulos,
+                2h30)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">80 mensagens de WhatsApp prontas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">Cardápio Digital pronto pra editar
+                (Canva)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">Planilha “Quanto Você Tá Perdendo no
+                iFood”</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">Script de Atendimento imprimível</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">Acesso vitalício à plataforma</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">Garantia incondicional de 7 dias</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">Suporte por email</span>
+            </li>
+          </ul>
+
+          <a href="#"
+            class="cta-orange block text-white text-center font-bold uppercase tracking-wide text-sm md:text-base py-4 rounded-xl">
+            Quero começar pelo Essencial
+          </a>
+
+          <div class="text-center">
+            <p class="text-destaque text-xs mt-4">
+              Acesso imediato à plataforma. Compra 100% segura.<br>
+              Garantia de 7 dias ou seu dinheiro de volta.
+            </p>
+
+            <!-- Seta centralizada apontando pro próximo card -->
+            <div class="arrow-down-circle" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="19 12 12 19 5 12" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================= -->
+        <!-- CARD PRO (DESTACADO)                         -->
+        <!-- ============================================= -->
+        <div class="offer-card pro">
+          <!-- Banner MAIS VENDIDO com ponta -->
+          <div class="ribbon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 400 56" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="ribbonGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#00DD5C" />
+                  <stop offset="100%" stop-color="#00B048" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M10 0 L390 0 Q400 0 400 10 L400 32 Q400 38 394 39 L220 44 Q200 56 200 56 Q200 56 180 44 L6 39 Q0 38 0 32 L0 10 Q0 0 10 0 Z"
+                fill="url(#ribbonGrad)" />
+            </svg>
+          </div>
+          <div class="ribbon-text">Mais Vendido</div>
+
+          <div class="pt-6"></div>
+
+          <!-- Estrelas -->
+          <div class="flex justify-center gap-1 mb-3" aria-label="Avaliação 5 estrelas">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB627" stroke="#FFB627" stroke-width="1"
+              aria-hidden="true">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB627" stroke="#FFB627" stroke-width="1"
+              aria-hidden="true">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB627" stroke="#FFB627" stroke-width="1"
+              aria-hidden="true">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB627" stroke="#FFB627" stroke-width="1"
+              aria-hidden="true">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB627" stroke="#FFB627" stroke-width="1"
+              aria-hidden="true">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
+
+          <h3 class="text-textoclaro font-bold text-2xl text-center mb-1">Plano PRO</h3>
+          <p class="text-textosec text-xs text-center mb-2 tracking-wide">
+            DE <span class="strike">R$ 89,90</span> POR APENAS
+          </p>
+
+          <div class="text-center mb-2">
+            <span class="font-anton text-sucesso text-6xl md:text-7xl leading-none">R$ 19,90</span>
+          </div>
+
+          <p class="text-textosec text-xs uppercase tracking-[0.2em] text-center mb-3">
+            À vista ou em até 2x no cartão
+          </p>
+          <p class="text-sucesso text-sm font-semibold text-center mb-7">
+            + 5.421 donos escolheram essa opção
+          </p>
+
+          <div class="divider mb-7"></div>
+
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">TUDO do Plano Essencial</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">Pack 30 Criativos prontos pra
+                anúncio</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">Pack 50 Reels editáveis no CapCut</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">Acesso ao Grupo Privado WhatsApp</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">Calls mensais com aluno top</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">Garantia estendida de 30 dias</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">Suporte prioritário (resposta em até
+                12h)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+                  stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg></span>
+              <span class="text-textoclaro text-sm md:text-base font-semibold">Acesso vitalício garantido</span>
+            </li>
+          </ul>
+
+          <a href="#"
+            class="cta-green block text-white text-center font-bold uppercase tracking-wide text-sm md:text-base py-4 rounded-xl">
+            Quero o Plano PRO + Bônus
+          </a>
+
+          <p class="text-textosec text-xs tracking-wider text-center mt-5">
+            GARANTIA DE 30 DIAS • COMPRA SEGURA
+          </p>
+
+          <!-- Bandeiras de cartão -->
+          <div class="flex justify-center items-center gap-2 mt-3" aria-label="Métodos de pagamento aceitos">
+            <svg width="36" height="22" viewBox="0 0 40 26" aria-hidden="true">
+              <rect width="40" height="26" rx="3" fill="#1A1F71" />
+              <text x="20" y="17" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="10"
+                font-weight="900" fill="#fff" letter-spacing="0.5">VISA</text>
+            </svg>
+            <svg width="36" height="22" viewBox="0 0 40 26" aria-hidden="true">
+              <rect width="40" height="26" rx="3" fill="#0D0D0D" />
+              <circle cx="16" cy="13" r="6.5" fill="#EB001B" />
+              <circle cx="24" cy="13" r="6.5" fill="#F79E1B" />
+              <path d="M20 8.2a6.5 6.5 0 0 0 0 9.6 6.5 6.5 0 0 0 0-9.6z" fill="#FF5F00" />
+            </svg>
+            <svg width="36" height="22" viewBox="0 0 40 26" aria-hidden="true">
+              <rect width="40" height="26" rx="3" fill="#000" />
+              <circle cx="20" cy="13" r="6" fill="none" stroke="#FFD600" stroke-width="2" />
+              <text x="20" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="700"
+                fill="#fff">ELO</text>
+            </svg>
+            <svg width="36" height="22" viewBox="0 0 40 26" aria-hidden="true">
+              <rect width="40" height="26" rx="3" fill="#fff" />
+              <text x="20" y="17" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="10"
+                font-weight="900" fill="#32BCAD" letter-spacing="0.5">Pix</text>
             </svg>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- ============================================= -->
-      <!-- CARD PRO (DESTACADO)                         -->
-      <!-- ============================================= -->
-      <div class="offer-card pro">
-        <!-- Banner MAIS VENDIDO com ponta -->
-        <div class="ribbon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 400 56" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="ribbonGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#00DD5C"/>
-                <stop offset="100%" stop-color="#00B048"/>
-              </linearGradient>
-            </defs>
-            <path d="M10 0 L390 0 Q400 0 400 10 L400 32 Q400 38 394 39 L220 44 Q200 56 200 56 Q200 56 180 44 L6 39 Q0 38 0 32 L0 10 Q0 0 10 0 Z"
-                  fill="url(#ribbonGrad)"/>
+  <!-- ============================================= -->
+  <!-- 8. GARANTIA TRIPLA                             -->
+  <!-- ============================================= -->
+  <section class="bg-card px-4 md:px-8 py-12 md:py-20">
+    <div class="max-w-3xl mx-auto dashed-guarantee rounded-2xl p-6 md:p-12 text-center bg-base">
+      <div class="flex justify-center mb-5">
+        <svg width="48" height="48" md:width="56" md:height="56" viewBox="0 0 24 24" fill="none" stroke="#00C853"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <polyline points="9 12 11 14 15 10" />
+        </svg>
+      </div>
+
+      <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-10 leading-tight">
+        Garantia Tripla OutFood
+      </h2>
+
+      <div class="space-y-8 text-left">
+        <div class="flex items-start gap-4">
+          <span class="font-anton text-sucesso text-3xl leading-none flex-shrink-0">01</span>
+          <p class="text-textoclaro text-base md:text-lg leading-relaxed">
+            <strong>Devolução Incondicional</strong> — 7 ou 30 dias pra testar tudo, sem perguntas.
+          </p>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="font-anton text-sucesso text-3xl leading-none flex-shrink-0">02</span>
+          <p class="text-textoclaro text-base md:text-lg leading-relaxed">
+            <strong>Garantia de Captura</strong> — Se em 30 dias não capturar 50 clientes pro Whats, devolvemos seu
+            dinheiro.
+          </p>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="font-anton text-sucesso text-3xl leading-none flex-shrink-0">03</span>
+          <p class="text-textoclaro text-base md:text-lg leading-relaxed">
+            <strong>Garantia da Economia</strong> — Se não economizar R$ 500 no primeiro mês, devolvemos o curso E
+            pagamos R$ 100 do bolso.
+          </p>
+        </div>
+      </div>
+
+      <p class="font-anton uppercase text-destaque text-2xl md:text-3xl tracking-wide mt-10">
+        O risco é 100% nosso.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- 9. PARA QUEM É / NÃO É                         -->
+  <!-- ============================================= -->
+  <section class="bg-base px-4 md:px-8 py-12 md:py-20">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-12 md:mb-14 text-center leading-tight">
+        Para quem é (e pra quem não é)
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <!-- CARD VERDE -->
+        <div class="card-hover bg-card rounded-2xl p-8 border-2 border-sucesso">
+          <div class="flex items-center gap-3 mb-6">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <h3 class="font-anton text-textoclaro text-2xl md:text-3xl uppercase">É pra você se</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 flex-shrink-0">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span class="text-textoclaro">Tem hamburgueria de qualquer porte</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 flex-shrink-0">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span class="text-textoclaro">Mais de 40% das vendas vêm de plataformas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 flex-shrink-0">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span class="text-textoclaro">Quer reduzir dependência sem perder cliente</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 flex-shrink-0">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span class="text-textoclaro">Está disposto a aplicar 30 dias seguidos</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CARD VERMELHO -->
+        <div class="card-hover bg-card rounded-2xl p-8 border-2 border-primaria">
+          <div class="flex items-center gap-3 mb-6">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+            <h3 class="font-anton text-textoclaro text-2xl md:text-3xl uppercase">Não é pra você se</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 flex-shrink-0">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              <span class="text-textoclaro">Quer “mágica” sem aplicar nada</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 flex-shrink-0">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              <span class="text-textoclaro">Sua hamburgueria não vende delivery</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 flex-shrink-0">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              <span class="text-textoclaro">Não tem WhatsApp Business</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- 10. FAQ                                        -->
+  <!-- ============================================= -->
+  <section class="bg-card px-4 md:px-8 py-12 md:py-20">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-12 md:mb-14 text-center leading-tight">
+        Perguntas Frequentes
+      </h2>
+
+      <details class="faq-item">
+        <summary>
+          <span>Vou ter que sair do iFood imediatamente?</span>
+          <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" />
           </svg>
+        </summary>
+        <div class="faq-body">
+          Não. O método é gradual. Você decide o ritmo. A maioria dos alunos reduz a dependência pra menos de 30% nos
+          primeiros 60 dias e só depois decide se sai por completo. O objetivo é te dar o controle de volta — não te
+          empurrar pra fora da plataforma da noite pro dia.
         </div>
-        <div class="ribbon-text">Mais Vendido</div>
+      </details>
 
-        <div class="pt-6"></div>
+      <details class="faq-item">
+        <summary>
+          <span>Funciona pra hamburgueria pequena de bairro?</span>
+          <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </summary>
+        <div class="faq-body">
+          Funciona melhor ainda. Hamburgueria de bairro tem público fiel e proximidade — duas coisas que o iFood te
+          impede de explorar. O método foi desenhado pra operações de qualquer porte, do food truck à rede com 4
+          unidades.
+        </div>
+      </details>
 
-        <!-- Estrelas -->
-        <div class="flex justify-center gap-1 mb-3" aria-label="Avaliação 5 estrelas">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB627" stroke="#FFB627" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB627" stroke="#FFB627" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB627" stroke="#FFB627" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB627" stroke="#FFB627" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFB627" stroke="#FFB627" stroke-width="1" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <details class="faq-item">
+        <summary>
+          <span>Não entendo de tecnologia, vai funcionar pra mim?</span>
+          <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </summary>
+        <div class="faq-body">
+          Sim. Cada módulo é gravado em formato walk-through: você vê a tela, faz o mesmo, e pronto. Se você sabe usar
+          WhatsApp, sabe usar o curso. As ferramentas que indicamos são todas gratuitas ou custam menos de R$ 30/mês.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Quanto tempo até começar a ver resultado?</span>
+          <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </summary>
+        <div class="faq-body">
+          Os primeiros pedidos diretos pelo Whats costumam aparecer entre 7 e 14 dias depois que você aplica o módulo de
+          captura. Em 30 dias, a média dos alunos chega a 30-40 clientes recorrentes pedindo direto.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Tenho acesso por quanto tempo?</span>
+          <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </summary>
+        <div class="faq-body">
+          Vitalício. Pagou uma vez, é seu pra sempre. Atualizações futuras dos módulos são liberadas automaticamente sem
+          custo adicional.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Como recebo o curso depois de comprar?</span>
+          <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </summary>
+        <div class="faq-body">
+          Imediatamente após a confirmação do pagamento, você recebe um email com login e senha pra plataforma. Se for
+          Pix, leva uns 2 minutos. No cartão, é instantâneo.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Posso assistir pelo celular?</span>
+          <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </summary>
+        <div class="faq-body">
+          Sim. A plataforma é responsiva — funciona no celular, tablet e computador. Você pode aplicar o método com o
+          celular na mão dentro da própria hamburgueria.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>E se eu não gostar?</span>
+          <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </summary>
+        <div class="faq-body">
+          Você tem 7 dias (Essencial) ou 30 dias (PRO) pra pedir reembolso total. É só mandar um email. Sem perguntas,
+          sem formulário chato. O risco é nosso.
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- 11. CTA FINAL                                  -->
+  <!-- ============================================= -->
+  <section class="bg-base px-4 md:px-8 py-12 md:py-20">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-12 md:mb-14 text-center leading-tight">
+        Você tem 2 caminhos a partir de hoje:
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12">
+        <!-- CAMINHO 1 -->
+        <div class="bg-card rounded-2xl p-8 border border-borda opacity-80">
+          <div class="mb-5">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#A0A0A0" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
+            </svg>
+          </div>
+          <p class="text-textosec text-base md:text-lg leading-relaxed">
+            Fechar essa página, continuar pagando 27%+ ao iFood, e em 12 meses
+            olhar pra trás vendo que perdeu mais R$ 47 mil que poderia ter
+            ficado no caixa.
+          </p>
         </div>
 
-        <h3 class="text-textoclaro font-bold text-2xl text-center mb-1">Plano PRO</h3>
-        <p class="text-textosec text-xs text-center mb-2 tracking-wide">
-          DE <span class="strike">R$ 89,90</span> POR APENAS
-        </p>
-
-        <div class="text-center mb-2">
-          <span class="font-anton text-sucesso text-6xl md:text-7xl leading-none">R$ 19,90</span>
+        <!-- CAMINHO 2 -->
+        <div class="bg-card rounded-2xl p-8 border-2 border-destaque">
+          <div class="mb-5">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <p class="text-destaque text-base md:text-lg leading-relaxed font-semibold">
+            Investir o equivalente a um combo de hambúrguer e em 30 dias ter
+            sua hamburgueria com canal próprio, lista de cliente própria, e
+            o controle de volta nas suas mãos.
+          </p>
         </div>
+      </div>
 
-        <p class="text-textosec text-xs uppercase tracking-[0.2em] text-center mb-3">
-          À vista ou em até 2x no cartão
-        </p>
-        <p class="text-sucesso text-sm font-semibold text-center mb-7">
-          + 5.421 donos escolheram essa opção
-        </p>
+      <p class="italic text-destaque text-center text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
+        O iFood vai continuar existindo amanhã. A pergunta é: você vai continuar
+        trabalhando pra ele ou pra você mesmo?
+      </p>
 
-        <div class="divider mb-7"></div>
-
-        <ul class="space-y-4 mb-8">
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">TUDO do Plano Essencial</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">Pack 30 Criativos prontos pra anúncio</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">Pack 50 Reels editáveis no CapCut</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">Acesso ao Grupo Privado WhatsApp</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">Calls mensais com aluno top</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">Garantia estendida de 30 dias</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">Suporte prioritário (resposta em até 12h)</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="check-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="text-textoclaro text-sm md:text-base font-semibold">Acesso vitalício garantido</span>
-          </li>
-        </ul>
-
-        <a href="#" class="cta-green block text-white text-center font-bold uppercase tracking-wide text-sm md:text-base py-4 rounded-xl">
-          Quero o Plano PRO + Bônus
+      <div class="flex flex-col md:flex-row gap-4 justify-center items-stretch max-w-3xl mx-auto px-2">
+        <a href="#"
+          class="cta-primary flex-1 bg-primaria text-white text-center font-bold uppercase tracking-wide text-base md:text-lg py-5 px-6 rounded-xl shadow-lg">
+          Quero o Essencial — R$ 9,90
         </a>
-
-        <p class="text-textosec text-xs tracking-wider text-center mt-5">
-          GARANTIA DE 30 DIAS • COMPRA SEGURA
-        </p>
-
-        <!-- Bandeiras de cartão -->
-        <div class="flex justify-center items-center gap-2 mt-3" aria-label="Métodos de pagamento aceitos">
-          <svg width="36" height="22" viewBox="0 0 40 26" aria-hidden="true">
-            <rect width="40" height="26" rx="3" fill="#1A1F71"/>
-            <text x="20" y="17" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="10" font-weight="900" fill="#fff" letter-spacing="0.5">VISA</text>
-          </svg>
-          <svg width="36" height="22" viewBox="0 0 40 26" aria-hidden="true">
-            <rect width="40" height="26" rx="3" fill="#0D0D0D"/>
-            <circle cx="16" cy="13" r="6.5" fill="#EB001B"/>
-            <circle cx="24" cy="13" r="6.5" fill="#F79E1B"/>
-            <path d="M20 8.2a6.5 6.5 0 0 0 0 9.6 6.5 6.5 0 0 0 0-9.6z" fill="#FF5F00"/>
-          </svg>
-          <svg width="36" height="22" viewBox="0 0 40 26" aria-hidden="true">
-            <rect width="40" height="26" rx="3" fill="#000"/>
-            <circle cx="20" cy="13" r="6" fill="none" stroke="#FFD600" stroke-width="2"/>
-            <text x="20" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="700" fill="#fff">ELO</text>
-          </svg>
-          <svg width="36" height="22" viewBox="0 0 40 26" aria-hidden="true">
-            <rect width="40" height="26" rx="3" fill="#fff"/>
-            <text x="20" y="17" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="10" font-weight="900" fill="#32BCAD" letter-spacing="0.5">Pix</text>
-          </svg>
-        </div>
+        <a href="#"
+          class="cta-success flex-1 bg-sucesso text-white text-center font-bold uppercase tracking-wide text-base md:text-lg py-5 px-6 rounded-xl shadow-lg">
+          Quero o PRO — R$ 19,90
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================= -->
-<!-- 8. GARANTIA TRIPLA                             -->
-<!-- ============================================= -->
-<section class="bg-card px-4 md:px-8 py-12 md:py-20">
-  <div class="max-w-3xl mx-auto dashed-guarantee rounded-2xl p-6 md:p-12 text-center bg-base">
-    <div class="flex justify-center mb-5">
-      <svg width="48" height="48" md:width="56" md:height="56" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        <polyline points="9 12 11 14 15 10"/>
-      </svg>
+  <!-- ============================================= -->
+  <!-- 12. RODAPÉ                                     -->
+  <!-- ============================================= -->
+  <footer class="bg-black px-4 md:px-8 py-12 md:py-16">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="font-anton text-white text-3xl uppercase tracking-wide mb-3">OutFood</div>
+      <p class="text-textosec mb-2">Método 3R para Hamburguerias</p>
+      <p class="text-textosec mb-6 flex items-center justify-center gap-2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <polyline points="22,6 12,13 2,6" />
+        </svg>
+        contato@outfood.com.br
+      </p>
+
+      <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-textosec mb-6"
+        aria-label="Links institucionais">
+        <a href="#" class="hover:text-textoclaro transition-colors">Termos de Uso</a>
+        <a href="#" class="hover:text-textoclaro transition-colors">Política de Privacidade</a>
+        <a href="#" class="hover:text-textoclaro transition-colors">Política de Reembolso</a>
+      </nav>
+
+      <p class="text-textosec text-sm mb-8">© 2026 OutFood. Todos os direitos reservados.</p>
+
+      <p class="text-[11px] leading-relaxed max-w-2xl mx-auto" style="color:#666;">
+        Este produto não garante a obtenção de resultados. iFood é marca
+        registrada da iFood.com Agência de Restaurantes Online S.A. A OutFood
+        não tem qualquer relação comercial ou societária com a iFood.
+      </p>
     </div>
+  </footer>
 
-    <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-10 leading-tight">
-      Garantia Tripla OutFood
-    </h2>
+  <script>
+    function startCountdown(duration, display) {
+      let timer = duration, hours, minutes, seconds;
+      setInterval(function () {
+        hours = parseInt(timer / 3600, 10);
+        minutes = parseInt((timer % 3600) / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
-    <div class="space-y-8 text-left">
-      <div class="flex items-start gap-4">
-        <span class="font-anton text-sucesso text-3xl leading-none flex-shrink-0">01</span>
-        <p class="text-textoclaro text-base md:text-lg leading-relaxed">
-          <strong>Devolução Incondicional</strong> — 7 ou 30 dias pra testar tudo, sem perguntas.
-        </p>
-      </div>
-      <div class="flex items-start gap-4">
-        <span class="font-anton text-sucesso text-3xl leading-none flex-shrink-0">02</span>
-        <p class="text-textoclaro text-base md:text-lg leading-relaxed">
-          <strong>Garantia de Captura</strong> — Se em 30 dias não capturar 50 clientes pro Whats, devolvemos seu dinheiro.
-        </p>
-      </div>
-      <div class="flex items-start gap-4">
-        <span class="font-anton text-sucesso text-3xl leading-none flex-shrink-0">03</span>
-        <p class="text-textoclaro text-base md:text-lg leading-relaxed">
-          <strong>Garantia da Economia</strong> — Se não economizar R$ 500 no primeiro mês, devolvemos o curso E pagamos R$ 100 do bolso.
-        </p>
-      </div>
-    </div>
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    <p class="font-anton uppercase text-destaque text-2xl md:text-3xl tracking-wide mt-10">
-      O risco é 100% nosso.
-    </p>
-  </div>
-</section>
+        display.textContent = hours + ":" + minutes + ":" + seconds;
 
-<!-- ============================================= -->
-<!-- 9. PARA QUEM É / NÃO É                         -->
-<!-- ============================================= -->
-<section class="bg-base px-4 md:px-8 py-12 md:py-20">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-12 md:mb-14 text-center leading-tight">
-      Para quem é (e pra quem não é)
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-      <!-- CARD VERDE -->
-      <div class="card-hover bg-card rounded-2xl p-8 border-2 border-sucesso">
-        <div class="flex items-center gap-3 mb-6">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <h3 class="font-anton text-textoclaro text-2xl md:text-3xl uppercase">É pra você se</h3>
-        </div>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-3">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
-            <span class="text-textoclaro">Tem hamburgueria de qualquer porte</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
-            <span class="text-textoclaro">Mais de 40% das vendas vêm de plataformas</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
-            <span class="text-textoclaro">Quer reduzir dependência sem perder cliente</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
-            <span class="text-textoclaro">Está disposto a aplicar 30 dias seguidos</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- CARD VERMELHO -->
-      <div class="card-hover bg-card rounded-2xl p-8 border-2 border-primaria">
-        <div class="flex items-center gap-3 mb-6">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          <h3 class="font-anton text-textoclaro text-2xl md:text-3xl uppercase">Não é pra você se</h3>
-        </div>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-3">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 flex-shrink-0"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            <span class="text-textoclaro">Quer “mágica” sem aplicar nada</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 flex-shrink-0"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            <span class="text-textoclaro">Sua hamburgueria não vende delivery</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF3B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 flex-shrink-0"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            <span class="text-textoclaro">Não tem WhatsApp Business</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================= -->
-<!-- 10. FAQ                                        -->
-<!-- ============================================= -->
-<section class="bg-card px-4 md:px-8 py-12 md:py-20">
-  <div class="max-w-3xl mx-auto">
-    <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-12 md:mb-14 text-center leading-tight">
-      Perguntas Frequentes
-    </h2>
-
-    <details class="faq-item">
-      <summary>
-        <span>Vou ter que sair do iFood imediatamente?</span>
-        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </summary>
-      <div class="faq-body">
-        Não. O método é gradual. Você decide o ritmo. A maioria dos alunos reduz a dependência pra menos de 30% nos primeiros 60 dias e só depois decide se sai por completo. O objetivo é te dar o controle de volta — não te empurrar pra fora da plataforma da noite pro dia.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>
-        <span>Funciona pra hamburgueria pequena de bairro?</span>
-        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </summary>
-      <div class="faq-body">
-        Funciona melhor ainda. Hamburgueria de bairro tem público fiel e proximidade — duas coisas que o iFood te impede de explorar. O método foi desenhado pra operações de qualquer porte, do food truck à rede com 4 unidades.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>
-        <span>Não entendo de tecnologia, vai funcionar pra mim?</span>
-        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </summary>
-      <div class="faq-body">
-        Sim. Cada módulo é gravado em formato walk-through: você vê a tela, faz o mesmo, e pronto. Se você sabe usar WhatsApp, sabe usar o curso. As ferramentas que indicamos são todas gratuitas ou custam menos de R$ 30/mês.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>
-        <span>Quanto tempo até começar a ver resultado?</span>
-        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </summary>
-      <div class="faq-body">
-        Os primeiros pedidos diretos pelo Whats costumam aparecer entre 7 e 14 dias depois que você aplica o módulo de captura. Em 30 dias, a média dos alunos chega a 30-40 clientes recorrentes pedindo direto.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>
-        <span>Tenho acesso por quanto tempo?</span>
-        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </summary>
-      <div class="faq-body">
-        Vitalício. Pagou uma vez, é seu pra sempre. Atualizações futuras dos módulos são liberadas automaticamente sem custo adicional.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>
-        <span>Como recebo o curso depois de comprar?</span>
-        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </summary>
-      <div class="faq-body">
-        Imediatamente após a confirmação do pagamento, você recebe um email com login e senha pra plataforma. Se for Pix, leva uns 2 minutos. No cartão, é instantâneo.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>
-        <span>Posso assistir pelo celular?</span>
-        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </summary>
-      <div class="faq-body">
-        Sim. A plataforma é responsiva — funciona no celular, tablet e computador. Você pode aplicar o método com o celular na mão dentro da própria hamburgueria.
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>
-        <span>E se eu não gostar?</span>
-        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </summary>
-      <div class="faq-body">
-        Você tem 7 dias (Essencial) ou 30 dias (PRO) pra pedir reembolso total. É só mandar um email. Sem perguntas, sem formulário chato. O risco é nosso.
-      </div>
-    </details>
-  </div>
-</section>
-
-<!-- ============================================= -->
-<!-- 11. CTA FINAL                                  -->
-<!-- ============================================= -->
-<section class="bg-base px-4 md:px-8 py-12 md:py-20">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="font-anton text-textoclaro text-3xl md:text-5xl uppercase mb-12 md:mb-14 text-center leading-tight">
-      Você tem 2 caminhos a partir de hoje:
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12">
-      <!-- CAMINHO 1 -->
-      <div class="bg-card rounded-2xl p-8 border border-borda opacity-80">
-        <div class="mb-5">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#A0A0A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
-          </svg>
-        </div>
-        <p class="text-textosec text-base md:text-lg leading-relaxed">
-          Fechar essa página, continuar pagando 27%+ ao iFood, e em 12 meses
-          olhar pra trás vendo que perdeu mais R$ 47 mil que poderia ter
-          ficado no caixa.
-        </p>
-      </div>
-
-      <!-- CAMINHO 2 -->
-      <div class="bg-card rounded-2xl p-8 border-2 border-destaque">
-        <div class="mb-5">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#FFB627" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-          </svg>
-        </div>
-        <p class="text-destaque text-base md:text-lg leading-relaxed font-semibold">
-          Investir o equivalente a um combo de hambúrguer e em 30 dias ter
-          sua hamburgueria com canal próprio, lista de cliente própria, e
-          o controle de volta nas suas mãos.
-        </p>
-      </div>
-    </div>
-
-    <p class="italic text-destaque text-center text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
-      O iFood vai continuar existindo amanhã. A pergunta é: você vai continuar
-      trabalhando pra ele ou pra você mesmo?
-    </p>
-
-    <div class="flex flex-col md:flex-row gap-4 justify-center items-stretch max-w-3xl mx-auto px-2">
-      <a href="#" class="cta-primary flex-1 bg-primaria text-white text-center font-bold uppercase tracking-wide text-base md:text-lg py-5 px-6 rounded-xl shadow-lg">
-        Quero o Essencial — R$ 9,90
-      </a>
-      <a href="#" class="cta-success flex-1 bg-sucesso text-white text-center font-bold uppercase tracking-wide text-base md:text-lg py-5 px-6 rounded-xl shadow-lg">
-        Quero o PRO — R$ 19,90
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================= -->
-<!-- 12. RODAPÉ                                     -->
-<!-- ============================================= -->
-<footer class="bg-black px-4 md:px-8 py-12 md:py-16">
-  <div class="max-w-4xl mx-auto text-center">
-    <div class="font-anton text-white text-3xl uppercase tracking-wide mb-3">OutFood</div>
-    <p class="text-textosec mb-2">Método 3R para Hamburguerias</p>
-    <p class="text-textosec mb-6 flex items-center justify-center gap-2">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-        <polyline points="22,6 12,13 2,6"/>
-      </svg>
-      contato@outfood.com.br
-    </p>
-
-    <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-textosec mb-6" aria-label="Links institucionais">
-      <a href="#" class="hover:text-textoclaro transition-colors">Termos de Uso</a>
-      <a href="#" class="hover:text-textoclaro transition-colors">Política de Privacidade</a>
-      <a href="#" class="hover:text-textoclaro transition-colors">Política de Reembolso</a>
-    </nav>
-
-    <p class="text-textosec text-sm mb-8">© 2026 OutFood. Todos os direitos reservados.</p>
-
-    <p class="text-[11px] leading-relaxed max-w-2xl mx-auto" style="color:#666;">
-      Este produto não garante a obtenção de resultados. iFood é marca
-      registrada da iFood.com Agência de Restaurantes Online S.A. A OutFood
-      não tem qualquer relação comercial ou societária com a iFood.
-    </p>
-  </div>
-</footer>
-
-<script>
-  function startCountdown(duration, display) {
-    let timer = duration, hours, minutes, seconds;
-    setInterval(function () {
-      hours = parseInt(timer / 3600, 10);
-      minutes = parseInt((timer % 3600) / 60, 10);
-      seconds = parseInt(timer % 60, 10);
-
-      hours = hours < 10 ? "0" + hours : hours;
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-
-      display.textContent = hours + ":" + minutes + ":" + seconds;
-
-      if (--timer < 0) {
-        timer = duration;
-      }
-    }, 1000);
-  }
-
-  window.onload = function () {
-    const twentyFourHours = 24 * 60 * 60;
-    const display = document.querySelector('#countdown-timer');
-    if (display) {
-      startCountdown(twentyFourHours, display);
+        if (--timer < 0) {
+          timer = duration;
+        }
+      }, 1000);
     }
-  };
-</script>
+
+    window.onload = function () {
+      const twentyFourHours = 24 * 60 * 60;
+      const display = document.querySelector('#countdown-timer');
+      if (display) {
+        startCountdown(twentyFourHours, display);
+      }
+    };
+  </script>
 
 </body>
+
 </html>
 <!-- HTML completo. Substituir href="#" dos botões pelo link de checkout antes de publicar. -->
