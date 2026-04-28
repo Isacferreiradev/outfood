@@ -17,6 +17,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap"
     rel="stylesheet">
 
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2433399330439281');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2433399330439281&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -443,29 +466,7 @@
     }
   </style>
 
-  <!-- Meta Pixel Code -->
-  <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2433399330439281');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=2433399330439281&ev=PageView&noscript=1" /></noscript>
-  <!-- End Meta Pixel Code -->
 
-  <!-- UTMify -->
-  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids
-    async defer></script>
 </head>
 
 <body class="bg-base text-textoclaro font-inter">
@@ -888,7 +889,8 @@
             <div>
               <div class="font-anton text-primaria text-5xl leading-none mb-2">03</div>
               <h3 class="text-textoclaro font-bold text-lg md:text-xl mb-2">WhatsApp Business Configurado pra Vender
-                <span class="text-textosec font-normal text-sm">(25 min)</span></h3>
+                <span class="text-textosec font-normal text-sm">(25 min)</span>
+              </h3>
               <p class="text-textosec leading-relaxed">Catálogo, mensagem automática, etiqueta e o erro fatal que faz
                 70% dos donos perderem cliente.</p>
             </div>
@@ -907,7 +909,8 @@
             <div>
               <div class="font-anton text-primaria text-5xl leading-none mb-2">04</div>
               <h3 class="text-textoclaro font-bold text-lg md:text-xl mb-2">Recuperando o Contato dos Clientes Fantasmas
-                <span class="text-textosec font-normal text-sm">(20 min)</span></h3>
+                <span class="text-textosec font-normal text-sm">(20 min)</span>
+              </h3>
               <p class="text-textosec leading-relaxed">A parte mais valiosa do curso. Como capturar o número de quem
                 comprou pelo iFood — ético, legal e funcional.</p>
             </div>
